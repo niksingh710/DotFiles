@@ -25,11 +25,11 @@ fi
 
 # shell sourcing (These all get sourced on the basis of which shell in process)
 if [ $(ps -p $$ | awk '{if(NR==2) print $4}') = 'bash' ];then
-    [ -f "$CONFIGDIR/bash/bash" ] && source "$CONFIGDIR/bash/bash"
+    [ -f "$MCONFIGDIR/bash/bash" ] && source "$MCONFIGDIR/bash/bash"
 fi
 
 if [ $(ps -p $$ | awk '{if(NR==2) print $4}') = 'zsh' ];then
-   [ -f "$CONFIGDIR/zsh/zsh" ] && source "$CONFIGDIR/zsh/zsh"
+   [ -f "$MCONFIGDIR/zsh/zsh" ] && source "$MCONFIGDIR/zsh/zsh"
 fi
 
 

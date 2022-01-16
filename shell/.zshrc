@@ -78,7 +78,7 @@ plugins=(
 
 )
 
-[ -d "$HOME/.config/zsh/completions" ] && fpath+="$HOME/.config/zsh/completions"
+[ -d "$HOME/.config/myconf/zsh/completions" ] && fpath+="$HOME/.config/myconf/zsh/completions"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -108,3 +108,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f "$HOME/.nikhilrc" ] && source "$HOME/.nikhilrc"
+

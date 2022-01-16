@@ -34,7 +34,3 @@ But then there is a if condition checking `ps` to identify current running shell
 
 This dir contains my personal binaries and misc stuff commonly used by other configs.
 
-## fonts dir contains all the fonts i use.
-
-after stowing the command to execute is.
-`fc-cache -f -v`

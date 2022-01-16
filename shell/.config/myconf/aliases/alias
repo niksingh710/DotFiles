@@ -67,6 +67,7 @@ fi
 if hash exa 2>/dev/null;then    
   alias l='exa -lahF --color=always --icons --sort=size --group-directories-first'
   alias lss='exa -hF --color=always --icons --sort=size --group-directories-first'
+  alias la='exa -ahF --color=always --icons --sort=size --group-directories-first'
   alias ls='exa -lhF --color=always --icons --sort=size --group-directories-first'
   alias lst='exa -lahFT --color=always --icons --sort=size --group-directories-first'
   alias lt='exa -aT --icons --group-directories-first --color=always --sort=size'
