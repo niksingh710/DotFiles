@@ -1,3 +1,6 @@
+MYLOC=`dirname $0`
+[ -f "$MYLOC/_fnm" ] && source "$MYLOC/_fnm"
+
 # Starship prompt
 hash starship 2>/dev/null && eval "$(starship init bash)"
 
