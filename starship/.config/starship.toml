@@ -1,7 +1,7 @@
 
 # Inserts a blank line between shell prompts
 add_newline = false
-format = "$username$hostname$character"
+format = "$username$hostname$directory$character"
 right_format = "$all"
 
 [character]
@@ -11,10 +11,11 @@ vicmd_symbol = "[V](bold green)"
 
 [directory]
 truncation_length = 1
+format = ' [$path]($style)[$read_only]($read_only_style)\]'
 
 [hostname]
 ssh_only = false
-format = '[@](bold red)[$hostname](bold white)\]'
+format = '[@](bold red)[$hostname](bold white)'
 disabled = false
 
 [username]
