@@ -1,0 +1,116 @@
+# espanso configuration file
+
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  # Dates
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  # Shell commands
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo Hello from your shell"
+  - trigger: ":smile"
+    replace: "😊"
+
+  - trigger: ":cool"
+    replace: "😎"
+
+  - trigger: ":blush"
+    replace: "😳"
+
+  - trigger: ":cold"
+    replace: "🥶"
+
+  - trigger: ":hot"
+    replace: "🥵"
+
+  - trigger: ":angry"
+    replace: "😡"
+
+  - trigger: ":unam"
+    replace: "😒"
+
+  - trigger: ":hhand"
+    replace: "🤦"
+
+  - trigger: ":kiss"
+    replace: "😘"
+
+  - trigger: ":heart"
+    replace: "❤"
+
+  - trigger: ":eheart"
+    replace: "😍"
+
+  - trigger: ":lol"
+    replace: "😂"
+
+  - trigger: ":xlol"
+    replace: "😂😂😂"
+
+  - trigger: ":rofl"
+    replace: "🤣"
+
+  - trigger: ":xrofl"
+    replace: "🤣🤣🤣"
+
+  - trigger: ":fed"
+    replace: "🙄"
+
+  - trigger: ":cute"
+    replace: "🥺"
+
+  - trigger: ":mad"
+    replace: "🤪"
+
+  - trigger: ":dizzy"
+    replace: "🥴"
+
+  - trigger: ":sleepy"
+    replace: "😴"
+
+  - trigger: ":taste"
+    replace: "🤤"
+
+  - trigger: ":yum"
+    replace: "😋"
+
+  - trigger: ":mute"
+    replace: "😑"
+
+  - trigger: ":party"
+    replace: "🥳"
+
+  - trigger: ":sick"
+    replace: "🤒"
+
+  - trigger: ":smirk"
+    replace: "😏"
+
+  - trigger: ":ooo"
+    replace: "😮"
+
+  - trigger: ":ssmile"
+    replace: "😅"
+
+  - trigger: ":vomit"
+    replace: "🤮"

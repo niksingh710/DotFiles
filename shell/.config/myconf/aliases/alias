@@ -67,6 +67,7 @@ if hash exa 2>/dev/null;then
   alias lss='exa -hF --color=always --icons --sort=size --group-directories-first'
   alias ls='exa -lhF --color=always --icons --sort=size --group-directories-first'
   alias lst='exa -lahFT --color=always --icons --sort=size --group-directories-first'
+  alias lt='exa -aT --icons --group-directories-first --color=always --sort=size'
 fi 
 
 if hash unimatrix 2>/dev/null;then
@@ -107,7 +108,7 @@ fi
 # custom alias on check based
 [ -d "$HOME/Downloads/temp" ] && alias cdt="cd $HOME/Downloads/temp"
 [ -d "$HOME/.config/myconf" ] && alias cdc="cd $HOME/.config/myconf"
-[ -d "/media/HDD/Sharing" ] && alias cds="cd /media/HDD/Sharing"
+[ -d "/media/$USER/HDD/Sharing" ] && alias cds="cd /media/$USER/HDD/Sharing"
 [ -d "$HOME/Personal/bin" ] && alias cdb="cd $HOME/Personal/bin"
 
 [ -f "$HOME/.config/myconf/aliases/alias" ] && alias ealias="vim $HOME/.config/myconf/aliases/alias"
@@ -116,4 +117,4 @@ fi
 [ -f "$HOME/Personal/misc/ascii" ] && alias neofetch="neofetch --ascii ~/Personal/misc/ascii"
 
 # quick access variable
-[ -d "/media/HDD/Sharing" ] && export HDD="/media/niksingh710/HDD/"
+[ -d "/media/$USER/HDD" ] && export HDD="/media/$USER/HDD/"
