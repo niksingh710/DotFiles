@@ -1,6 +1,5 @@
 # Hello i am a custom rc file 
 # created by Nikhil Singh (https://t.me/niksingh710) (https://github.com/niksingh710)
-
 CONFIGDIR="$HOME/.config"
 MCONFIGDIR="$HOME/.config/myconf"
 [ -f "$MCONFIGDIR/pathmod" ] && source "$MCONFIGDIR/pathmod"
@@ -32,4 +31,5 @@ fi
 if [ $(ps -p $$ | awk '{if(NR==2) print $4}') = 'zsh' ];then
    [ -f "$CONFIGDIR/zsh/zsh" ] && source "$CONFIGDIR/zsh/zsh"
 fi
+
 
