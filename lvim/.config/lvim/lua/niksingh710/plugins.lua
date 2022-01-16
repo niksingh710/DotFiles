@@ -1,4 +1,5 @@
 lvim.plugins = {
+    {"wakatime/vim-wakatime"},
     {"folke/tokyonight.nvim"},
     {
       "folke/trouble.nvim",

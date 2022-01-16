@@ -1,5 +1,6 @@
 [ -f "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh" ] && source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+[ -f "$HOME/.zsh/command-not-found/command-not-found.plugin.zsh" ] && source ~/.zsh/command-not-found/command-not-found.plugin.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
