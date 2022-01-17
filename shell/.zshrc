@@ -72,10 +72,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  sudo
+  web-search
   command-not-found
   zsh-autosuggestions
   fast-syntax-highlighting
-
 )
 
 [ -d "$HOME/.config/myconf/zsh/completions" ] && fpath+="$HOME/.config/myconf/zsh/completions"
