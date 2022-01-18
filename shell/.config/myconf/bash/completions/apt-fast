@@ -1,0 +1,2 @@
+_completion_loader apt-get
+complete -F _apt_get apt-fast

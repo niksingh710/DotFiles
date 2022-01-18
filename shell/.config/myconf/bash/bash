@@ -8,4 +8,5 @@ fi
 # Starship prompt
 hash starship 2>/dev/null && eval "$(starship init bash)"
 
+[ -f "$MYLOC/completions/apt-fast" ] && source "$MYLOC/completions/apt-fast"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

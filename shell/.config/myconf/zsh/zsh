@@ -1,5 +1,6 @@
-
+MYLOC=`dirname $0`
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+[ -f "$MYLOC/completions/_apt-fast" ] && source "$MYLOC/completions/_apt-fast"
 # Starship prompt
 hash starship 2>/dev/null && eval "$(starship init zsh)"
 

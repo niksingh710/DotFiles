@@ -102,8 +102,22 @@ if hash batcat 2>/dev/null;then
   alias cpu-turbo='[ $(ccat /sys/devices/system/cpu/intel_pstate/no_turbo) = 0 ] && echo "Turbo: On" || echo "Turbo: Off"'
 fi
 
+if hash fdfind 2>/dev/null;then
+  alias fd='fdfind'
+fi
+
+if hash btop 2>/dev/null;then
+  alias btop='btop --utf-force'
+fi
+
 if hash speed-test 2>/dev/null;then
   alias speedtest='speed-test'
+fi
+
+if hash neofetch 2>/dev/null;then
+	if [ -f "$HOME/Personal/misc/ascii" ];then
+		alias neofetch="neofetch --ascii ~/Personal/misc/ascii"
+	fi
 fi
 
 
@@ -117,7 +131,6 @@ fi
 [ -f "$HOME/.config/myconf/aliases/alias" ] && alias ealias="vim $HOME/.config/myconf/aliases/alias"
 [ -f "$HOME/.config/myconf/pathmod" ] && alias epath="vim $HOME/.config/myconf/pathmod"
 [ -f "$HOME/.nikhilrc" ] && alias erc="vim $HOME/.nikhilrc"
-[ -f "$HOME/Personal/misc/ascii" ] && alias neofetch="neofetch --ascii ~/Personal/misc/ascii"
 
 # quick access variable
 [ -d "/media/$USER/HDD" ] && export HDD="/media/$USER/HDD/"
