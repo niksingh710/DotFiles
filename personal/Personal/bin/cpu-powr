@@ -1,11 +1,27 @@
 #!/bin/bash
 # Make Sure you add '%<username> ALL=ALL NOPASSWD:ALL' as this need to get sudo passwd
-# changing the cpu governer state
-if hash cpupower 2>/dev/null;then
-  sudo cpupower frequency-set -g powersave >/dev/null
-fi
 
 # Disabling turbo mode to make cpu be on calm state
 if [ -f /sys/devices/system/cpu/intel_pstate/no_turbo ];then
   echo "1" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo > /dev/null
 fi
+TURB=$([ $(cat /sys/devices/system/cpu/intel_pstate/no_turbo) = 0 ] && echo "Turbo: On" || echo "Turbo: Off")
+# changing cpu governer to make it rock on
+if hash cpupower 2>/dev/null;then
+  sudo cpupower frequency-set -g powersave &>/dev/null
+  if [ $? = 0 ];then
+      GOVCUR=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
+      SUM="Governer Changed 😎"
+      MSG="Current CPU Governer: $GOVCUR\n$TURB"
+      hash notify-send 2>/dev/null && notify-send -u normal -i cpu -a cpu-powr "$SUM" "$(echo -e $MSG)" 
+    else
+      GOVCUR=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
+      SUM="cpupower faced a Error ☠"
+      MSG="Please Make sure that:\nlinux-tools-$(uname -r)\nlinux-cloud-tools-$(uname -r)\nlinux-tools-generic\nlinux-cloud-tools-generic\n\n--------------------\nis installed in system."
+      hash notify-send 2>/dev/null && notify-send -u critical -i cpu -a cpu-powr "$SUM" "$(echo -e $MSG)" 
+      hash notify-send 2>/dev/null && notify-send -u normal -i cpu -a cpu-powr "Current CPU Status" "$(echo -e 'Current CPU Governer: '$GOVCUR'\n'$TURB)" 
+  fi
+else
+  hash notify-send 2>/dev/null && notify-send -u normal -i cpu -a cpu-powr "cpupower is not installed" 
+fi
+
