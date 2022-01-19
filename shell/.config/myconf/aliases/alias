@@ -1,5 +1,11 @@
 # This file is a list of aliases used by Nikhil Singh
 
+check_alias(){
+	if hash $1 2>/dev/null;then
+		alias $2=$3
+	fi
+}
+
 # System based aliases
 MYLOC=`dirname $0`
 if [ -f /etc/os-release ]; then
@@ -51,7 +57,7 @@ alias ssh-start="sudo service ssh start"
 alias ssh-stop="sudo service ssh stop"
 alias ssh-restart="sudo service ssh restart"
 alias ssh-terminate="pkill -o -u $USER sshd"
-
+# use `update-rc.d ssh disable` to disable ssh at startup and use `update-rc.d ssh enable` to enable at start up
 
 # X11 alias 
 if [ $XDG_SESSION_TYPE = 'x11' ];then
@@ -102,22 +108,13 @@ if hash batcat 2>/dev/null;then
   alias cpu-turbo='[ $(ccat /sys/devices/system/cpu/intel_pstate/no_turbo) = 0 ] && echo "Turbo: On" || echo "Turbo: Off"'
 fi
 
-if hash fdfind 2>/dev/null;then
-  alias fd='fdfind'
-fi
+check_alias fdfind fd 'fdfind'
+check_alias btop btop 'btop --utf-force'
+check_alias radeontop radeontop "radeontop -c"
+check_alias speed-test speedtest "speed-test"
 
-if hash btop 2>/dev/null;then
-  alias btop='btop --utf-force'
-fi
-
-if hash speed-test 2>/dev/null;then
-  alias speedtest='speed-test'
-fi
-
-if hash neofetch 2>/dev/null;then
-	if [ -f "$HOME/Personal/misc/ascii" ];then
-		alias neofetch="neofetch --ascii ~/Personal/misc/ascii"
-	fi
+if [ -f "$HOME/Personal/misc/ascii" ];then
+	check_alias neofetch neofetch "neofetch --ascii ~/Personal/misc/ascii"
 fi
 
 
