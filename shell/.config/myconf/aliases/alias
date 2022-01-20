@@ -47,8 +47,6 @@ alias cpu-governer='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 alias cpu-turbo='[ $(cat /sys/devices/system/cpu/intel_pstate/no_turbo) = 0 ] && echo "Turbo: On" || echo "Turbo: Off"'
 alias gc='git clone $@'
 alias tb='nc termbin.com 9999'
-alias ..='cd ../'
-alias ...='cd ../../'
 
 # SSH 
 alias ssh-list="ss | grep -i ssh"

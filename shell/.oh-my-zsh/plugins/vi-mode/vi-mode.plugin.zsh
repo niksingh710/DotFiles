@@ -67,7 +67,7 @@ function zle-line-finish() {
 zle -N zle-line-finish
 
 bindkey -v
-
+bindkey -M viins jk vi-cmd-mode
 # allow vv to edit the command line (standard behaviour)
 autoload -Uz edit-command-line
 zle -N edit-command-line
