@@ -3,6 +3,7 @@ plugins=(
   git
   vi-mode
   web-search
+  colored-man-pages
   command-not-found
   zsh-autosuggestions
   fast-syntax-highlighting
