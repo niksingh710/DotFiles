@@ -2,7 +2,7 @@
 
 check_alias(){
 	if hash $1 2>/dev/null;then
-		alias $2=$3
+		alias $2="$3"
 	fi
 }
 
@@ -77,28 +77,11 @@ if hash exa 2>/dev/null;then
   alias lt='exa -aT --icons --group-directories-first --color=always --sort=size'
 fi 
 
-if hash unimatrix 2>/dev/null;then
-  alias matrix='unimatrix -f -l ocCgGkS -s 96'
-fi
-
 if hash lvim 2>/dev/null;then
 	alias vim='lvim'
 	alias nvim='lvim'
 	alias vi='lvim'
 fi
-
-if hash figlet 2>/dev/null;then
-	alias stime='watch -n1 -t "date +%T | figlet "'
-fi
-
-if hash 0x0 2>/dev/null;then
-  alias transfer='0x0'
-fi
-
-if hash fm6000 2>/dev/null;then
-  alias sneofetch='fm6000 -r -c random'
-fi
-
 if hash batcat 2>/dev/null;then
   alias cat='batcat'
   alias ccat='batcat -p'
@@ -106,8 +89,13 @@ if hash batcat 2>/dev/null;then
   alias cpu-turbo='[ $(ccat /sys/devices/system/cpu/intel_pstate/no_turbo) = 0 ] && echo "Turbo: On" || echo "Turbo: Off"'
 fi
 
+check_alias figlet stime 'watch -n1 -t "date +%T | figlet"'
+check_alias unimatrix matrix 'unimatrix -f -l ocCgGkS -s 96'
+check_alias 0x0 transfer '0x0'
+check_alias 0x0 transfer '0x0'
+check_alias fm6000 sneofetch 'fm6000 -r -c random'
 check_alias fdfind fd 'fdfind'
-check_alias btop btop 'btop --utf-force'
+check_alias btop btop "btop --utf-force"
 check_alias radeontop radeontop "radeontop -c"
 check_alias speed-test speedtest "speed-test"
 
