@@ -7,6 +7,7 @@ plugins=(
   command-not-found
   zsh-autosuggestions
   fast-syntax-highlighting
+  sudo
 )
 [ -d "$HOME/.config/myconf/zsh/completions" ] && fpath+="$HOME/.config/myconf/zsh/completions"
 source $ZSH/oh-my-zsh.sh

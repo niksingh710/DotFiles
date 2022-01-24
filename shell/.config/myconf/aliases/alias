@@ -58,7 +58,7 @@ alias ssh-terminate="pkill -o -u $USER sshd"
 # use `update-rc.d ssh disable` to disable ssh at startup and use `update-rc.d ssh enable` to enable at start up
 
 # X11 alias 
-if [ $XDG_SESSION_TYPE = 'x11' ];then
+if [[ $XDG_SESSION_TYPE = 'x11' ]];then # if getting any errors change condition like :-> if [[ $XDG_SESSION_TYPE == 'x11' ]];then
   alias xdg-open="xdg-open 2>/dev/null"
   alias open="xdg-open 2>/dev/null"
   if hash xclip 2>/dev/null;then
