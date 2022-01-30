@@ -3,10 +3,16 @@ lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<cr>"
+lvim.keys.normal_mode["<C-a>"] = "ggvG$"
+lvim.keys.insert_mode["<C-a>"] = "<Esc>ggvG$"
 
 -- nvim style keymappings
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
+keymap("n", "dd", '"_dd', opts)
+keymap("n", "d", '"_d', opts)
+keymap("n", "x", '"_x', opts)
+keymap("n", "c", '"_c', opts)
 keymap("i", "jk", "<ESC>", opts)
 
 -- unmap a default keymapping

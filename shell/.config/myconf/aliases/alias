@@ -96,7 +96,7 @@ check_alias 0x0 transfer '0x0'
 check_alias fm6000 sneofetch 'fm6000 -r -c random'
 check_alias fdfind fd 'fdfind'
 check_alias btop btop "btop --utf-force"
-check_alias radeontop radeontop "radeontop -c"
+check_alias radeontop radeontop "radeontop -Tc"
 check_alias speed-test speedtest "speed-test"
 
 if [ -f "$HOME/Personal/misc/ascii" ];then
