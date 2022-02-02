@@ -5,6 +5,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<cr>"
 lvim.keys.normal_mode["<C-a>"] = "ggvG$"
 lvim.keys.insert_mode["<C-a>"] = "<Esc>ggvG$"
+lvim.keys.insert_mode["<C-i>"] = "<Esc>"
 
 -- nvim style keymappings
 local keymap = vim.api.nvim_set_keymap
@@ -46,13 +47,10 @@ lvim.builtin.which_key.mappings["V"] = { "<cmd>vsplit<CR>", "Vertical Split" }
 lvim.builtin.which_key.mappings["H"] = { "<cmd>split<CR>", "Horizontal Split" }
 
 
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
--- }
+lvim.builtin.which_key.mappings["C"] = {
+  name = "+Coc",
+  d = { "<cmd>CocDiagnostics<cr>", "Diagnostics Coc" },
+  f = { "<cmd>CocFix<cr>", "Fix" },
+  h = { "<cmd>call CocAction('doHover')<cr>", "hover" },
+}
 

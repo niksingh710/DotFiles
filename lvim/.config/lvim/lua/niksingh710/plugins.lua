@@ -4,8 +4,9 @@ lvim.plugins = {
     {
       "folke/trouble.nvim",
       cmd = "TroubleToggle",
-    },
-    {"mg979/vim-visual-multi"},
+    },{'neoclide/coc.nvim', branch = 'release'},
+    {"mg979/vim-visual-multi"},{'tzachar/cmp-tabnine', after = "nvim-cmp", run='powershell ./install.ps1', requires = 'hrsh7th/nvim-cmp'},
+ -- {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'},
    {'nvim-telescope/telescope-media-files.nvim',
     media_files = {
       -- filetypes whitelist

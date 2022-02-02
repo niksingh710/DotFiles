@@ -12,4 +12,3 @@ plugins=(
 [ -d "$HOME/.config/myconf/zsh/completions" ] && fpath+="$HOME/.config/myconf/zsh/completions"
 source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.nikhilrc" ] && source "$HOME/.nikhilrc"
-

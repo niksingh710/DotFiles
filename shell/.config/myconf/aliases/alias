@@ -79,7 +79,7 @@ fi
 
 if hash lvim 2>/dev/null;then
 	alias vim='lvim'
-	alias nvim='lvim'
+	# alias nvim='lvim'
 	alias vi='lvim'
 fi
 if hash batcat 2>/dev/null;then
