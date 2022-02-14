@@ -40,6 +40,7 @@ fi
 alias myip="echo `hostname -I | awk '{print $1}'`"
 alias mygip="curl -s http://ipecho.net/plain; echo"
 alias myips='echo "local : `myip` \nglobal: `mygip`"'
+alias weather='curl "wttr.in/?0?M"'
 alias python="python3"
 alias pip="pip3"
 alias cpufreq='watch -n1 -t "grep \"^[c]pu MHz\" /proc/cpuinfo"'
@@ -98,6 +99,7 @@ check_alias fdfind fd 'fdfind'
 check_alias btop btop "btop --utf-force"
 check_alias radeontop radeontop "radeontop -Tc"
 check_alias speed-test speedtest "speed-test"
+check_alias rich mcat "rich -m $@"
 
 if [ -f "$HOME/Personal/misc/ascii" ];then
 	check_alias neofetch neofetch "neofetch --ascii ~/Personal/misc/ascii"
@@ -117,3 +119,6 @@ fi
 
 # quick access variable
 [ -d "/media/$USER/HDD" ] && export HDD="/media/$USER/HDD/"
+
+
+unset -f check_alias

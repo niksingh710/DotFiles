@@ -1,5 +1,3 @@
-alias uninstall='sudo apt purge -y --remove $@'
-alias un="uninstall $@"
 alias install="sudo dpkg -i $@"
 
 _PAKMGR=apt
@@ -10,9 +8,33 @@ fi
 
 alias in="sudo $_PAKMGR install -y $@"
 alias update="sudo $_PAKMGR update && $_PAKMGR list --upgradeable"
+alias search="sudo $_PAKMGR search $@"
 alias upgrade="sudo $_PAKMGR upgrade -y"
 alias clean="sudo $_PAKMGR autoremove -y && sudo $_PAKMGR autoclean -y && sudo $_PAKMGR clean"
 alias in-list="$_PAKMGR list --installed | awk -F/ '{print \$1}'"
+
+if hash nala 2>/dev/null;then
+  alias install="sudo nala install -y $@"
+  alias in="install"
+  alias update="sudo nala update"
+  alias show="sudo nala show $@"
+fi
+function uninstall(){
+  ARGS=("$@")
+  if (($# > 0));then
+    for i in "$ARGS"
+      do
+       alias $i >/dev/null 2>&1 && unalias $i 2>/dev/null
+    done
+    if hash > nala 2>/dev/null;then
+      sudo nala purge -y ${ARGS[@]}
+    else
+     sudo apt purge --remove $ARUN
+    fi
+  fi
+}
+
+alias un="uninstall $@"
 
 if hash fzf 2>/dev/null;then
  alias in-list-fd="$_PAKMGR list --installed | awk -F/ '{print \$1}' | fzf"

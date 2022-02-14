@@ -12,7 +12,6 @@ local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 keymap("n", "dd", '"_dd', opts)
 keymap("n", "d", '"_d', opts)
-keymap("n", "x", '"_x', opts)
 keymap("n", "c", '"_c', opts)
 keymap("i", "jk", "<ESC>", opts)
 
