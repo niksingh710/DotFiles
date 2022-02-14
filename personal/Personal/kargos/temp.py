@@ -2,11 +2,6 @@
 import sys
 import subprocess
 import json
-
-a = []
-for i in range(10):
-    a.append(i)
-
 class Data:
     def __init__(self):
         try:
@@ -60,16 +55,25 @@ class Data:
 
 def display(temp):
     em = "🌡️️"
-    if temp["cpu"] > 85:
+    col='rgba(244,189,0,.7)'
+    if temp["cpu"] > 95:
         em = "🥵"
-    elif temp["cpu"] < 50:
+        col='rgba(219,68,55,.7)'
+    elif temp["cpu"] < 75:
         em = "😌"
-    print(f"{em} {temp['cpu']}°C")
+        col='rgba(66,133,244,.7)'
+    
+    wifi=f" {temp['wifi']}°C".rjust(12) 
+    gpu=f"﬙ {temp['gpu']}°C".rjust(12)
+
+    style=f"<div style='color:{col}'>"
+    print(f"{style}{em} {temp['cpu']}°C </div>")
     print("---")
-    print(f" {temp['wifi']}°C")
-    print(f"GPU: {temp['gpu']}°C")
+    print(f"{wifi} {gpu}")
     for i, val in enumerate(temp["core"]):
-        print(f"Core {i+1}: {val}°C")
+        endch = "\n" if i %2!=0 else "  "
+        coreInfo=f"  {val}°C".ljust(12)
+        print(f"{coreInfo}",end=endch)
 
 
 if __name__ == "__main__":

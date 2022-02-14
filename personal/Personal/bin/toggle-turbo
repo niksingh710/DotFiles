@@ -1,0 +1,11 @@
+#!/bin/bash
+TRBSTAT=$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)
+if [ -f /sys/devices/system/cpu/intel_pstate/no_turbo ];then
+  if [ $TRBSTAT = 0 ];then
+    echo "1" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo > /dev/null
+  else
+    echo "0" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo > /dev/null
+  fi
+else
+  hash notify-send 2>/dev/null && notify-send -u normal -i Err -a cpu-stat "Turbo File" "The file does not exist" 
+fi

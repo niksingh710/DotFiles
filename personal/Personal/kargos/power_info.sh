@@ -13,7 +13,7 @@ fi
 if [ $STATUS = Full ];then
    BAT="🔋 "
 elif [ $STATUS = Charging ];then
-   BAT="🔌 $CAPACITY%"
+   BAT=" $CAPACITY%"
 elif [ $STATUS = Discharging ];then
    BAT="🔋 $CAPACITY"
   if [ $CAPACITY -le 80 ];then
@@ -32,6 +32,10 @@ elif [ $STATUS = Discharging ];then
     BAT="⚰️  $CAPACITY%"
   fi
 fi
-
-echo "$BAT -> $((POW/1000000)) W | bash='plasmawindowed org.kde.plasma.battery' onclick=bash"
+POW=$((POW/1000000))
+POWSTR="-> $POW W "
+if (($POW == 0));then
+  POWSTR=""
+fi
+echo "$BAT $POWSTR | bash='plasmawindowed org.kde.plasma.battery' onclick=bash"
 
