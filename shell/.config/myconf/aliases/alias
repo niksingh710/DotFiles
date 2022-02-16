@@ -13,7 +13,7 @@ if [ -f /etc/os-release ]; then
 
   case $ID in
 
-    "ubuntu" | "pop" | "debian" | "neon" )
+    "ubuntu" | "pop" | "debian" )
       # echo "I am ubuntu" 
       [ -f "$MYLOC/distro/ubuntu" ] && source $MYLOC/distro/ubuntu
       ;;
