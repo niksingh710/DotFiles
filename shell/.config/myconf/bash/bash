@@ -1,4 +1,4 @@
-MYLOC=`dirname $0`
+MYLOC=`dirname ${BASH_SOURCE[0]}`
 if [ -d "$MYLOC/completions/" ];then
   for f in "$MYLOC/completions/"*;do
     source "$f"
@@ -7,6 +7,4 @@ fi
 
 # Starship prompt
 hash starship 2>/dev/null && eval "$(starship init bash)"
-
-[ -f "$MYLOC/completions/apt-fast" ] && source "$MYLOC/completions/apt-fast"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

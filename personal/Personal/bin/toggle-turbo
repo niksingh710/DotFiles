@@ -25,13 +25,21 @@
 #           /____/\___/_/  /_/ .___/\__/____/  
 #                           /_/                
 # (niksingh710) [https://github.com/niksingh710] [https://t.me/niksingh710]
+
 TRBSTAT=$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)
 if [ -f /sys/devices/system/cpu/intel_pstate/no_turbo ];then
   if [ $TRBSTAT = 0 ];then
     echo "1" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo > /dev/null
-  else
+      else
     echo "0" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo > /dev/null
   fi
+    CPUTURBO="Unable to get Status"
+    if [ $(cat /sys/devices/system/cpu/intel_pstate/no_turbo) = 0 ];then
+      CPUTURBO="Turbo: On"
+    else
+      CPUTURBO="Turbo: Off"
+    fi
+    hash notify-send 2>/dev/null && notify-send -u normal -i cpu -a toggle-tubo "Current Turbo status" "$(echo -e $CPUTURBO)"
 else
   hash notify-send 2>/dev/null && notify-send -u normal -i Err -a cpu-stat "Turbo File" "The file does not exist" 
 fi
