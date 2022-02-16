@@ -1,0 +1,142 @@
+[General Options]
+ShowMenuBar=true
+ShowPath=false
+ShowStatusBar=false
+
+[KFileDialog Settings]
+detailViewIconSize=16
+iconViewIconSize=64
+
+[KTextEditor Document]
+Allow End of Line Detection=true
+Auto Detect Indent=true
+BOM=false
+Backup Local=false
+Backup Prefix=
+Backup Remote=false
+Backup Suffix=~
+Camel Cursor=true
+Encoding=UTF-8
+End of Line=0
+Indent On Backspace=true
+Indent On Tab=true
+Indent On Text Paste=false
+Indentation Mode=normal
+Indentation Width=4
+Keep Extra Spaces=false
+Line Length Limit=10000
+Newline at End of File=true
+On-The-Fly Spellcheck=false
+Overwrite Mode=false
+PageUp/PageDown Moves Cursor=false
+Remove Spaces=1
+ReplaceTabsDyn=true
+Show Spaces=1
+Show Tabs=true
+Smart Home=true
+Swap Directory=
+Swap File Mode=1
+Swap Sync Interval=15
+Tab Handling=2
+Tab Width=4
+Trailing Marker Size=1
+Word Wrap=false
+Word Wrap Column=80
+
+[KTextEditor Editor]
+Encoding Prober Type=1
+Fallback Encoding=ISO 8859-15
+
+[KTextEditor Renderer]
+Animate Bracket Matching=true
+Auto Color Theme Selection=false
+Color Theme=Personal~Atom1D
+Font=JetBrainsMono Nerd Font,13,-1,5,50,0,0,0,0,0
+Show Indentation Lines=true
+Show Whole Bracket Expression=true
+Word Wrap Marker=false
+
+[KTextEditor View]
+Allow Mark Menu=true
+Auto Brackets=false
+Auto Center Lines=0
+Auto Completion=true
+Auto Completion Preselect First Entry=true
+Backspace Remove Composed Characters=false
+Bookmark Menu Sorting=0
+Bracket Match Preview=true
+Chars To Enclose Selection=<>(){}[]'"
+Default Mark Type=1
+Dynamic Word Wrap=true
+Dynamic Word Wrap Align Indent=80
+Dynamic Word Wrap At Static Marker=false
+Dynamic Word Wrap Indicators=1
+Dynamic Wrap not at word boundaries=false
+Fold First Line=false
+Folding Bar=true
+Folding Preview=true
+Icon Bar=false
+Input Mode=0
+Keyword Completion=true
+Line Modification=true
+Line Numbers=true
+Maximum Search History Size=100
+Mouse Paste At Cursor Position=false
+Persistent Selection=false
+Scroll Bar Marks=false
+Scroll Bar Mini Map All=true
+Scroll Bar Mini Map Width=60
+Scroll Bar MiniMap=true
+Scroll Bar Preview=true
+Scroll Past End=false
+Search/Replace Flags=140
+Show Focus Frame Around Editor=true
+Show Line Count=true
+Show Scrollbars=1
+Show Word Count=true
+Smart Copy Cut=true
+Text Drag And Drop=true
+User Sets Of Chars To Enclose Selection=
+Vi Input Mode Steal Keys=false
+Vi Relative Line Numbers=false
+Word Completion=true
+Word Completion Minimal Word Length=3
+Word Completion Remove Tail=true
+
+[MainWindow]
+HDMI-2 Height 1920x1080=1013
+HDMI-2 Width 1920x1080=1888
+HDMI-2 eDP-1 Height 1920x1080=1060
+HDMI-2 eDP-1 Width 1920x1080=1920
+HDMI-2 eDP-1 Window-Maximized 1920x1080=true
+HDMI-2 eDP-1 XPosition 1920x1080=16
+HDMI-2 eDP-1 YPosition 1920x1080=31
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAB2IAAAP3AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP-1 Height 1920x1080=1011
+eDP-1 Width 1920x1080=1886
+eDP-1 XPosition 1920x1080=17
+eDP-1 YPosition 1920x1080=32
+
+[Recent Files]
+File1[$e]=$HOME/.local/share/kwin/scripts/alwaysopenonfocusedscreen/contents/code/main.js
+File10[$e]=/media/niksingh710/HDD/Bak/Notes.txt
+File2[$e]=$HOME/.local/share/plasma/desktoptheme/Harmony/metadata.desktop
+File3[$e]=$HOME/.local/share/plasma/look-and-feel/com.github.yeyushengfan258.Harmony/metadata.desktop
+File4[$e]=$HOME/.local/share/plasma/look-and-feel/com.github.yeyushengfan258.Harmony/contents/defaults
+File5[$e]=$HOME/.local/share/plasma/look-and-feel/Dracula/metadata.desktop
+File6[$e]=$HOME/.local/share/plasma/look-and-feel/Dracula/contents/defaults
+File7[$e]=$HOME/.local/share/aurorae/themes/Harmony/metadata.desktop
+File8[$e]=$HOME/.local/share/plasma/desktoptheme/HarmonyHybrid/metadata.desktop
+File9[$e]=$HOME/.local/share/plasma/look-and-feel/HarmonyHybrid/contents/defaults
+Name1[$e]=main.js
+Name10[$e]=Notes.txt
+Name2[$e]=metadata.desktop
+Name3[$e]=metadata.desktop
+Name4[$e]=defaults
+Name5[$e]=metadata.desktop
+Name6[$e]=defaults
+Name7[$e]=metadata.desktop
+Name8[$e]=metadata.desktop
+Name9[$e]=defaults
