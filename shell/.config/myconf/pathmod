@@ -1,14 +1,24 @@
 # I update the PATH Variable for the system
 
-[ -d "$HOME/.local/bin" ] && export PATH=$PATH:"$HOME/.local/bin"
-[ -d "$HOME/Personal/bin" ] && export PATH=$PATH:"$HOME/Personal/bin"
+add_path(){
+    ARR=("$@")
+    NEWPATH="$PATH"
+    export PATH=""
+    for i in "${ARR[@]}"
+      do
+        NEWPATH=$NEWPATH:$i
+      done
+    export PATH=$NEWPATH
+}
+PATHLIST=(
+   "$HOME/.local/bin"
+   "$HOME/Personal/bin"
+   "$HOME/Android/Sdk/platform-tools"
+   "$HOME/.cargo/bin"
+   "$HOME/go/bin"
+   "$HOME/flutter/bin"
+   "$HOME/.fnm"
+)
+add_path ${PATHLIST[@]}
+unset -f add_path
 
-# custom Language Program Support e.g golang Flutter ....
-
-[ -d "$HOME/Android/Sdk/platform-tools" ] && export PATH=$PATH:"$HOME/Android/Sdk/platform-tools"
-[ -d "$HOME/.cargo/bin" ] && export PATH=$PATH:"$HOME/.cargo/bin"
-[ -d "$HOME/go/bin" ] && export PATH=$PATH:"$HOME/go/bin"
-[ -d "$HOME/flutter/bin" ] && export PATH=$PATH:"$HOME/flutter/bin"
-[ -d "$HOME/.fnm" ] && export PATH="$HOME/.fnm":$PATH
-
-# path added via script

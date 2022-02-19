@@ -50,7 +50,7 @@ Fallback Encoding=ISO 8859-15
 [KTextEditor Renderer]
 Animate Bracket Matching=true
 Auto Color Theme Selection=false
-Color Theme=Personal~Atom1D
+Color Theme=Personal
 Font=JetBrainsMono Nerd Font,13,-1,5,50,0,0,0,0,0
 Show Indentation Lines=true
 Show Whole Bracket Expression=true
@@ -104,8 +104,10 @@ Word Completion Minimal Word Length=3
 Word Completion Remove Tail=true
 
 [MainWindow]
-HDMI-2 Height 1920x1080=1013
-HDMI-2 Width 1920x1080=1888
+HDMI-2 Height 1920x1080=1016
+HDMI-2 Width 1920x1080=940
+HDMI-2 XPosition 1920x1080=12
+HDMI-2 YPosition 1920x1080=32
 HDMI-2 eDP-1 Height 1920x1080=1060
 HDMI-2 eDP-1 Width 1920x1080=1920
 HDMI-2 eDP-1 Window-Maximized 1920x1080=true
@@ -120,23 +122,5 @@ eDP-1 XPosition 1920x1080=17
 eDP-1 YPosition 1920x1080=32
 
 [Recent Files]
-File1[$e]=$HOME/.local/share/kwin/scripts/alwaysopenonfocusedscreen/contents/code/main.js
-File10[$e]=/media/niksingh710/HDD/Bak/Notes.txt
-File2[$e]=$HOME/.local/share/plasma/desktoptheme/Harmony/metadata.desktop
-File3[$e]=$HOME/.local/share/plasma/look-and-feel/com.github.yeyushengfan258.Harmony/metadata.desktop
-File4[$e]=$HOME/.local/share/plasma/look-and-feel/com.github.yeyushengfan258.Harmony/contents/defaults
-File5[$e]=$HOME/.local/share/plasma/look-and-feel/Dracula/metadata.desktop
-File6[$e]=$HOME/.local/share/plasma/look-and-feel/Dracula/contents/defaults
-File7[$e]=$HOME/.local/share/aurorae/themes/Harmony/metadata.desktop
-File8[$e]=$HOME/.local/share/plasma/desktoptheme/HarmonyHybrid/metadata.desktop
-File9[$e]=$HOME/.local/share/plasma/look-and-feel/HarmonyHybrid/contents/defaults
-Name1[$e]=main.js
-Name10[$e]=Notes.txt
-Name2[$e]=metadata.desktop
-Name3[$e]=metadata.desktop
-Name4[$e]=defaults
-Name5[$e]=metadata.desktop
-Name6[$e]=defaults
-Name7[$e]=metadata.desktop
-Name8[$e]=metadata.desktop
-Name9[$e]=defaults
+File1[$e]=/media/niksingh710/HDD/Bak/Notes.txt
+Name1[$e]=Notes.txt

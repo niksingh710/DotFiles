@@ -15,7 +15,7 @@ alias in-list="$_PAKMGR list --installed | awk -F/ '{print \$1}'"
 
 if hash nala 2>/dev/null;then
   alias install="sudo nala install -y $@"
-  alias in="install"
+  alias in="install $@"
   alias update="sudo nala update"
   alias show="sudo nala show $@"
 fi
@@ -39,3 +39,17 @@ alias un="uninstall $@"
 if hash fzf 2>/dev/null;then
  alias in-list-fd="$_PAKMGR list --installed | awk -F/ '{print \$1}' | fzf"
 fi
+
+complete_custom_alias(){
+    ARR=("$@")
+    for i in "${ARR[@]}"
+    do
+      complete -F _complete_alias $i
+    done
+}
+
+# This array consist of aliases that needs tab complitions with them
+ALIAS=(install in search)
+
+complete_custom_alias ${ALIAS[@]}
+unset -f complete_custom_alias

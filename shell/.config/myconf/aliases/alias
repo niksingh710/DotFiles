@@ -7,15 +7,14 @@ check_alias(){
 }
 
 # System based aliases
-MYLOC=`dirname $0`
+MYLOC="/home/$USER/.config/myconf/aliases"
 if [ -f /etc/os-release ]; then
   . /etc/os-release
 
   case $ID in
 
     "ubuntu" | "pop" | "debian" )
-      # echo "I am ubuntu" 
-      [ -f "$MYLOC/distro/ubuntu" ] && source $MYLOC/distro/ubuntu
+            [ -f "$MYLOC/distro/ubuntu" ] && source $MYLOC/distro/ubuntu
       ;;
 
     "fedora")
@@ -48,6 +47,14 @@ alias cpu-governer='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 alias cpu-turbo='[ $(cat /sys/devices/system/cpu/intel_pstate/no_turbo) = 0 ] && echo "Turbo: On" || echo "Turbo: Off"'
 alias gc='git clone $@'
 alias tb='nc termbin.com 9999'
+alias c='clear'
+alias e='$EDITOR'
+alias se='sudo $EDITOR'
+
+# override
+alias mkdir='mkdir -p'
+alias cp='cp -gR'
+alias mv='mv -g'
 
 # SSH 
 alias ssh-list="ss | grep -i ssh"
@@ -92,7 +99,6 @@ fi
 
 check_alias figlet stime 'watch -n1 -t "date +%T | figlet"'
 check_alias unimatrix matrix 'unimatrix -f -l ocCgGkS -s 96'
-check_alias 0x0 transfer '0x0'
 check_alias 0x0 transfer '0x0'
 check_alias fm6000 sneofetch 'fm6000 -r -c random'
 check_alias fdfind fd 'fdfind'
