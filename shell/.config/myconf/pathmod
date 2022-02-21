@@ -6,7 +6,7 @@ add_path(){
     export PATH=""
     for i in "${ARR[@]}"
       do
-        NEWPATH=$NEWPATH:$i
+       [ -d $i ] && NEWPATH=$NEWPATH:$i
       done
     export PATH=$NEWPATH
 }
@@ -18,6 +18,7 @@ PATHLIST=(
    "$HOME/go/bin"
    "$HOME/flutter/bin"
    "$HOME/.fnm"
+   "$HOME/sadf"
 )
 add_path ${PATHLIST[@]}
 unset -f add_path
