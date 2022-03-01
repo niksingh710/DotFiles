@@ -1,8 +1,3 @@
-
--- lvim.builtin.dashboard.custom_section["g"] = {
---    description = { "Hello World!             " },
---    command = ":echo 'Hello World!'",
--- }
 lvim.builtin.dashboard.custom_header = {
        "                                                                             ",
        "                                                                             ",
@@ -15,4 +10,4 @@ lvim.builtin.dashboard.custom_header = {
        "  ░░█████████ ░░██████ ░░████████░░██████  █████   █████ █████      ░░█████  ",
        "   ░░░░░░░░░   ░░░░░░   ░░░░░░░░  ░░░░░░  ░░░░░   ░░░░░ ░░░░░        ░░░░░   ",
        "                                                                             "
-    };
+};

@@ -1,29 +1,26 @@
--- keymappings [view all the defaults by pressing <leader>Lk]
-lvim.leader = "space"
--- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<cr>"
-lvim.keys.normal_mode["<C-a>"] = "ggvG$"
-lvim.keys.insert_mode["<C-a>"] = "<Esc>ggvG$"
-lvim.keys.insert_mode["<C-i>"] = "<Esc>"
+-- Normal Mode Bindings
+local normal = {
+  ['<C-s>'] = ':w<cr>',
+  ['<C-a>'] = 'gg0vG$',
+  ['dd'] = '"_dd',
+  ['d'] = '"_d',
+  ['c'] = '"_c',
+}
 
--- nvim style keymappings
-local keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-keymap("n", "dd", '"_dd', opts)
-keymap("n", "d", '"_d', opts)
-keymap("n", "c", '"_c', opts)
-keymap("i", "jk", "<ESC>", opts)
+-- Insert Mode Bindings
+local insert = {
+  ['<C-s>'] = '<Esc>:w<cr>',
+  ['<C-a>'] = '<Esc>gg0vG$',
+  ['jk'] = '<Esc>',
+}
 
--- unmap a default keymapping
--- lvim.keys.normal_mode["<C-Up>"] = false
--- edit a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
+lvim.keys.normal_mode = normal
+lvim.keys.insert_mode = insert
 
--- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
--- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
-local _, actions = pcall(require, "telescope.actions")
-lvim.builtin.telescope.defaults.mappings = {
+-- plugins keymaps
+local status_ok, actions = pcall(require, "telescope.actions")
+if status_ok then
+  lvim.builtin.telescope.defaults.mappings = {
   -- for input mode
   i = {
     ["<C-j>"] = actions.move_selection_next,
@@ -37,19 +34,4 @@ lvim.builtin.telescope.defaults.mappings = {
     ["<C-k>"] = actions.move_selection_previous,
   },
 }
-
--- Use which-key to add extra bindings with the leader-key prefix
-lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["m"] = { "<cmd>Telescope media_files<CR>", "Media Files" }
-
-lvim.builtin.which_key.mappings["V"] = { "<cmd>vsplit<CR>", "Vertical Split" }
-lvim.builtin.which_key.mappings["H"] = { "<cmd>split<CR>", "Horizontal Split" }
-
-
-lvim.builtin.which_key.mappings["C"] = {
-  name = "+Coc",
-  d = { "<cmd>CocDiagnostics<cr>", "Diagnostics Coc" },
-  f = { "<cmd>CocFix<cr>", "Fix" },
-  h = { "<cmd>call CocAction('doHover')<cr>", "hover" },
-}
-
+end
