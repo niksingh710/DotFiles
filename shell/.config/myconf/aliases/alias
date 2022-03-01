@@ -71,6 +71,12 @@ if [[ $XDG_SESSION_TYPE = 'x11' ]];then # if getting any errors change condition
   fi
 fi
 
+if hash mysql 2>/dev/null;then
+   alias mysql-start='sudo systemctl start mysql'
+   alias mysql-status='sudo systemctl status mysql'
+   alias mysql-stop='sudo systemctl stop mysql'
+fi
+
 if hash exa 2>/dev/null;then    
   alias l='exa -lahF --color=always --icons --sort=size --group-directories-first'
   alias lss='exa -hF --color=always --icons --sort=size --group-directories-first'
