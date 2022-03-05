@@ -14,8 +14,16 @@ local insert = {
   ['jk'] = '<Esc>',
 }
 
+-- Visual Mode Bindings
+local visual = {
+  ['<C-s>'] = '<Esc>:w<cr>',
+  ['<C-a>'] = '<Esc>gg0vG$',
+  ['jk'] = '<Esc>',
+}
+
 lvim.keys.normal_mode = normal
 lvim.keys.insert_mode = insert
+lvim.keys.visual_mode = visual
 
 -- plugins keymaps
 local status_ok, actions = pcall(require, "telescope.actions")
