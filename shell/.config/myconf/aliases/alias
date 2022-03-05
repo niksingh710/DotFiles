@@ -107,6 +107,8 @@ check_alias btop btop "btop --utf-force"
 check_alias radeontop radeontop "radeontop -Tc"
 check_alias speed-test speedtest "speed-test"
 check_alias rich mcat "rich -m $@"
+check_alias bastet tetris "bastet"
+check_alias nsnake snake "nsnake"
 
 if [ -f "$HOME/Personal/misc/ascii" ];then
 	check_alias neofetch neofetch "neofetch --ascii ~/Personal/misc/ascii"
