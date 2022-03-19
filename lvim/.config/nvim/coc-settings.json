@@ -19,5 +19,7 @@
         }
       }
     }
-  }
+  },
+  "codelens.enable": true,
+  "java.implementation.codelens": true
 }

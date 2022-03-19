@@ -6,3 +6,11 @@ lvim.builtin.which_key.mappings["C"] = {
 }
 
 
+lvim.builtin.which_key.mappings["m"] = {"<cmd>MinimapToggle<cr>","MiniMap Toggle"}
+lvim.builtin.which_key.mappings["P"] = {"<cmd>Glow<cr>","MarkDown Preview (Glow)"}
+lvim.builtin.which_key.mappings["t"] = {
+  name = '+Trouble Check',
+  q = {"<cmd>TroubleToggle quickfix<cr>","Quick Fix"},
+  l = {"<cmd>TroubleToggle lsp_references<cr>","Lsp Reference"},
+  t = {"<cmd>TroubleToggle <cr>","Toggle"}
+}
