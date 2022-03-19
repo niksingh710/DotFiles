@@ -96,6 +96,8 @@ if hash batcat 2>/dev/null;then
   alias ccat='batcat -p'
   alias cpu-governer='ccat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
   alias cpu-turbo='[ $(ccat /sys/devices/system/cpu/intel_pstate/no_turbo) = 0 ] && echo "Turbo: On" || echo "Turbo: Off"'
+  alias ease='cat -l bash'
+  alias ease='ccat -l bash'
 fi
 
 check_alias figlet stime 'watch -n1 -t "date +%T | figlet"'
@@ -106,7 +108,7 @@ check_alias fdfind fd 'fdfind'
 check_alias btop btop "btop --utf-force"
 check_alias radeontop radeontop "radeontop -Tc"
 check_alias speed-test speedtest "speed-test"
-check_alias rich mcat "rich -m $@"
+check_alias glow mcat "glow $@"
 check_alias bastet tetris "bastet"
 check_alias nsnake snake "nsnake"
 
@@ -121,6 +123,7 @@ fi
 [ -d "$HOME/.config/myconf" ] && alias cdc="cd $HOME/.config/myconf"
 [ -d "/media/$USER/HDD/Sharing" ] && alias cds="cd /media/$USER/HDD/Sharing"
 [ -d "$HOME/Personal/bin" ] && alias cdb="cd $HOME/Personal/bin"
+[ -d "$HOME/work/temp" ] && alias cwt="cd $HOME/work/temp"
 
 [ -f "$HOME/.config/myconf/aliases/alias" ] && alias ealias="vim $HOME/.config/myconf/aliases/alias"
 [ -f "$HOME/.config/myconf/pathmod" ] && alias epath="vim $HOME/.config/myconf/pathmod"

@@ -25,6 +25,6 @@
 #           /____/\___/_/  /_/ .___/\__/____/  
 #                           /_/                
 # (niksingh710) [https://github.com/niksingh710] [https://t.me/niksingh710]
-MEM=$(free -h | awk '/^Mem:/ {print $3 "/" $2 }')
+MEM=$(free -h --giga | awk '/^Mem:/ {print $3 "/" $2 }')
 
 echo "<span style='font-size:16px;'>🧠 </span>$MEM | bash='systemmonitor' onclick=bash"

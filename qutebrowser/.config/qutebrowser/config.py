@@ -122,3 +122,4 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 
 
 config.bind('M', 'hint links spawn vlc {hint-url}')
+

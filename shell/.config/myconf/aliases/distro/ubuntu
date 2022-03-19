@@ -6,7 +6,8 @@ if hash apt-fast 2>/dev/null;then
   _PAKMGR=apt-fast
 fi
 
-alias in="sudo $_PAKMGR install -y $@"
+alias uninstall="sudo $_PAKMGR purge --remove $@"
+alias install="sudo $_PAKMGR install -y $@"
 alias update="sudo $_PAKMGR update && $_PAKMGR list --upgradeable"
 alias search="sudo $_PAKMGR search $@"
 alias upgrade="sudo $_PAKMGR upgrade -y"
@@ -15,25 +16,12 @@ alias in-list="$_PAKMGR list --installed | awk -F/ '{print \$1}'"
 
 if hash nala 2>/dev/null;then
   alias install="sudo nala install -y $@"
-  alias in="install $@"
+  alias uninstall='sudo nala remove $@'
   alias update="sudo nala update -y"
   alias show="sudo nala show $@"
 fi
-function uninstall(){
-  ARGS=("$@")
-  if (($# > 0));then
-    for i in "$ARGS"
-      do
-       alias $i >/dev/null 2>&1 && unalias $i 2>/dev/null
-    done
-    if hash > nala 2>/dev/null;then
-      sudo nala purge -y ${ARGS[@]}
-    else
-     sudo apt purge --remove $ARUN
-    fi
-  fi
-}
 
+alias in="install $@"
 alias un="uninstall $@"
 
 if hash fzf 2>/dev/null;then
@@ -49,7 +37,7 @@ complete_custom_alias(){
 }
 
 # This array consist of aliases that needs tab complitions with them
-ALIAS=(install in search)
+ALIAS=(install in search un uninstall)
 
 complete_custom_alias ${ALIAS[@]}
 unset -f complete_custom_alias
