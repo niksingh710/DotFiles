@@ -29,9 +29,9 @@
 TRBSTAT=$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)
 if [ -f /sys/devices/system/cpu/intel_pstate/no_turbo ];then
   if [ $TRBSTAT = 0 ];then
-    echo "1" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo > /dev/null
-      else
-    echo "0" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo > /dev/null
+    eval "/home/niksingh710/Personal/bin/turbo-off"  
+  else
+    eval "/home/niksingh710/Personal/bin/turbo-on"  
   fi
     CPUTURBO="Unable to get Status"
     if [ $(cat /sys/devices/system/cpu/intel_pstate/no_turbo) = 0 ];then
@@ -41,5 +41,5 @@ if [ -f /sys/devices/system/cpu/intel_pstate/no_turbo ];then
     fi
     hash notify-send 2>/dev/null && notify-send -u normal -i cpu -a Toggle-Turbo "Current Turbo status" "$(echo -e $CPUTURBO)"
 else
-  hash notify-send 2>/dev/null && notify-send -u normal -i Err -a cpu-stat "Turbo File" "The file does not exist" 
+  hash notify-send 2>/dev/null && notify-send -u normal -i Err -a Turbo-stat "Turbo File" "The file does not exist" 
 fi

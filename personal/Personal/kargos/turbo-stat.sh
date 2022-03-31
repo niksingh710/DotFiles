@@ -25,10 +25,9 @@
 #           /____/\___/_/  /_/ .___/\__/____/  
 #                           /_/                
 # (niksingh710) [https://github.com/niksingh710] [https://t.me/niksingh710]
-
-TRBSTAT=$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)
-if [ -f /sys/devices/system/cpu/intel_pstate/no_turbo ];then
-  if [ $TRBSTAT = 1 ];then
-    echo "0" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo > /dev/null
-  fi
-fi
+SYM="-"
+TURBO=$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)
+[ $TURBO = 0 ] && SYM="🟢" || SYM="🔴"
+FIN="▎$SYM "
+[ -f "$HOME/Personal/bin/toggle-turbo" ] && DATA="$FIN | bash=$HOME/Personal/bin/toggle-turbo onclick=bash" || DATA="$SYM"
+echo "$DATA"

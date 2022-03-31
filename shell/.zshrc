@@ -8,6 +8,7 @@ plugins=(
   zsh-autosuggestions
   fast-syntax-highlighting
   sudo
+  zsh-256color
 )
 [ -d "$HOME/.config/myconf/zsh/zsh_func" ] && fpath+="$HOME/.config/myconf/zsh/zsh_func"
 source $ZSH/oh-my-zsh.sh

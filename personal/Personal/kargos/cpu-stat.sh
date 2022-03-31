@@ -26,9 +26,6 @@
 #                           /_/                
 # (niksingh710) [https://github.com/niksingh710] [https://t.me/niksingh710]
 GOV=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
-SYM="-"
-TURBO=$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)
-[ $TURBO = 0 ] && SYM="🟢" || SYM="🔴"
-FIN="▎$SYM $GOV ▎"
-[ -f "$HOME/Personal/bin/toggle-turbo" ] && DATA="$FIN | bash=$HOME/Personal/bin/toggle-turbo onclick=bash" || DATA="$SYM $GOV"
+FIN=" $GOV ▎"
+[ -f "$HOME/Personal/bin/toggle-cpu" ] && DATA="$FIN | bash=$HOME/Personal/bin/toggle-cpu onclick=bash" || DATA="$GOV"
 echo "$DATA"
