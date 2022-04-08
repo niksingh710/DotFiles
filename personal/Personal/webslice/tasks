@@ -1,0 +1,3 @@
+document.getElementsByClassName('gwVhNn')[0].style.display = 'none'; // To hide side menu and logo
+document.getElementsByClassName('gcOTvJ')[0].style.display='none'; // Hiding all icons
+document.getElementsByClassName('bxVRUf')[0].style.display='none'; // for floating title

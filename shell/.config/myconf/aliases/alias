@@ -36,6 +36,7 @@ if [ -f /etc/os-release ]; then
 fi
 
 # common System aliases
+alias sudo='sudo '
 alias myip="echo `hostname -I | awk '{print $1}'`"
 alias mygip="curl -s http://ipecho.net/plain; echo"
 alias myips='echo "local : `myip` \nglobal: `mygip`"'
@@ -126,6 +127,7 @@ fi
 [ -d "$HOME/work/temp" ] && alias cwt="cd $HOME/work/temp"
 
 [ -f "$HOME/.config/myconf/aliases/alias" ] && alias ealias="vim $HOME/.config/myconf/aliases/alias"
+[ -f "$HOME/.config/myconf/variables" ] && alias evar="vim $HOME/.config/myconf/variables"
 [ -f "$HOME/.config/myconf/pathmod" ] && alias epath="vim $HOME/.config/myconf/pathmod"
 [ -f "$HOME/.nikhilrc" ] && alias erc="vim $HOME/.nikhilrc"
 

@@ -114,3 +114,6 @@ matches:
 
   - trigger: ":vomit"
     replace: "🤮"
+
+  - trigger: ":delta"
+    replace: "Δ"

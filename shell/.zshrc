@@ -1,6 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(
-  git
   vi-mode
   web-search
   colored-man-pages

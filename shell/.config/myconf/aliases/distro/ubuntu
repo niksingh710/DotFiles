@@ -24,6 +24,7 @@ fi
 
 alias in="install $@"
 alias un="uninstall $@"
+alias up="update"
 
 if hash fzf 2>/dev/null;then
  alias in-list-fd="$_PAKMGR list --installed | awk -F/ '{print \$1}' | fzf"

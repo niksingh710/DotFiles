@@ -5,6 +5,7 @@ MCONFIGDIR="$HOME/.config/myconf"
 [ -f "$MCONFIGDIR/pathmod" ] && source "$MCONFIGDIR/pathmod"
 [ -f "$MCONFIGDIR/aliases/alias" ] && source "$MCONFIGDIR/aliases/alias"
 [ -f "$MCONFIGDIR/variables" ] && source "$MCONFIGDIR/variables"
+[ -f "$MCONFIGDIR/func" ] && source "$MCONFIGDIR/func"
 
 if hash fnm 2>/dev/null;then
 	eval "$(fnm env)"

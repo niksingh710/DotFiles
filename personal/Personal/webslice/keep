@@ -1,0 +1,10 @@
+document.getElementsByClassName('gb_Md gb_3d gb_Sd gb_Bc')[0].children[0].style.display='none'; // Icon and menu
+document.getElementsByClassName('gb_Md gb_3d gb_Sd gb_Bc')[0].children[2].style.display='none'; // Icon and google
+document.getElementsByClassName('gb_Md gb_3d gb_Sd gb_Bc')[0].children[1].children[2].style.display='none' // Reload and gear
+document.getElementsByTagName('form')[0].classList.remove('gb_Ee');
+document.getElementsByTagName('form')[0].style.width='80vw';
+document.getElementsByClassName('gb_Md gb_3d gb_Sd gb_Bc')[0].children[1].children[1].classList.remove('gb_Ee');
+document.getElementsByClassName('gb_Md gb_3d gb_Sd gb_Bc')[0].style.display='flex';
+document.getElementsByClassName('gb_Md gb_3d gb_Sd gb_Bc')[0].style.justifyContent='center';
+document.getElementsByClassName('RfDI4d-Iu19ad')[0].style.marginLeft='-60px';
+document.getElementsByClassName('PvRhvb-bN97Pc')[0].style.overflow='hidden';

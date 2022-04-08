@@ -35,11 +35,10 @@ cat << EOF
 EOF
 exit
 }
-
 ppa-purge(){
 	if hash ppa-purge 2>/dev/null;then
 		sudo ppa-purge ppa:$1
-		sudo apt update && apt list --upgradeable
+		apt list --upgradeable
 	else
 		echo "ppa purge is not installed"
 	fi
@@ -50,7 +49,7 @@ remove(){
 	echo "removing $1....."
 	if hash add-apt-repository 2>/dev/null;then
 		sudo add-apt-repository -r ppa:$1
-		sudo apt update && apt list --upgradeable
+		apt list --upgradeable
 	else
 		echo "Unable to find add-apt-repository binary please check Path variable"
 	fi
@@ -61,7 +60,7 @@ add(){
 	echo "adding $1...."
 	if hash add-apt-repository 2>/dev/null;then
 		sudo add-apt-repository ppa:$1
-		sudo apt update && apt list --upgradeable
+		apt list --upgradeable
 	else
 		echo "Unable to find add-apt-repository binary please check Path variable"
 	fi
