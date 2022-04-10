@@ -25,8 +25,10 @@
 #           /____/\___/_/  /_/ .___/\__/____/  
 #                           /_/                
 # (niksingh710) [https://github.com/niksingh710] [https://t.me/niksingh710]
-GOV=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
-FIN="$GOV ▎"
-# [ -f "$HOME/Personal/bin/toggle-cpu" ] && DATA="$FIN | bash=$HOME/Personal/bin/toggle-cpu onclick=bash" || DATA="$GOV"
-[ -f "$HOME/Personal/bin/toggle-cpu" ] && DATA="$FIN" 
-echo "▎$DATA"
+
+TRBSTAT=$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)
+if [ -f /sys/devices/system/cpu/intel_pstate/no_turbo ];then
+  if [ $TRBSTAT = 1 ];then
+    echo "0" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo > /dev/null
+  fi
+fi

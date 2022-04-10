@@ -112,6 +112,7 @@ check_alias speed-test speedtest "speed-test"
 check_alias glow mcat "glow $@"
 check_alias bastet tetris "bastet"
 check_alias nsnake snake "nsnake"
+check_alias trash rm "trash"
 
 if [ -f "$HOME/Personal/misc/ascii" ];then
 	check_alias neofetch neofetch "neofetch --ascii ~/Personal/misc/ascii"
