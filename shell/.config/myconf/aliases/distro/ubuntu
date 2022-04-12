@@ -17,7 +17,7 @@ alias in-list="$_PAKMGR list --installed | awk -F/ '{print \$1}'"
 if hash nala 2>/dev/null;then
   alias install="sudo nala install -y $@"
   alias uninstall='sudo nala remove $@'
-  alias update="sudo nala update -y"
+  alias update="sudo nala upgrade -y"
   alias show="sudo nala show $@"
   alias search="sudo nala search $@"
 fi
