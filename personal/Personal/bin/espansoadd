@@ -26,7 +26,7 @@
 #                           /_/                
 # (niksingh710) [https://github.com/niksingh710] [https://t.me/niksingh710]
 if [ $# -eq 2 ];then
-	cat <<- EOF >> ~/.config/espanso/default.yml
+	cat <<- EOF >> ~/.config/espanso/match/base.yml
 	
   - trigger: "$1"
     replace: "$2"
