@@ -1,5 +1,5 @@
 [Appearance]
-ColorScheme=FlatLyan
+ColorScheme=FlatUI
 Font=JetBrainsMono Nerd Font Mono,10,-1,5,50,0,0,0,0,0
 UseFontLineChararacters=true
 

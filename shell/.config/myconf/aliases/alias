@@ -129,6 +129,7 @@ if hash batcat 2>/dev/null;then
   alias ease='ccat -l bash'
 fi
 
+check_alias sensors wsensors 'watch -n1 -t "sensors"'
 check_alias figlet stime 'watch -n1 -t "date +%T | figlet"'
 check_alias unimatrix matrix 'unimatrix -f -l ocCgGkS -s 96'
 check_alias 0x0 transfer '0x0'
