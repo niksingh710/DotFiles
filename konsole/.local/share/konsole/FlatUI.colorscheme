@@ -89,8 +89,11 @@ Color=250,254,255
 Color=236,240,241
 
 [General]
+Anchor=0.5,0.5
 Blur=true
 ColorRandomization=false
 Description=Flatui
-Opacity=0.21
+FillStyle=Tile
+Opacity=0.5
 Wallpaper=
+WallpaperOpacity=1
