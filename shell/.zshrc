@@ -5,7 +5,7 @@ plugins=(
   colored-man-pages
   command-not-found
   zsh-autosuggestions
-  fast-syntax-highlighting
+  F-Sy-H
   sudo
   zsh-256color
 )
