@@ -28,6 +28,6 @@
 SYM="-"
 TURBO=$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)
 [ $TURBO = 0 ] && SYM="🟢" || SYM="🔴"
-FIN="▎$SYM "
+FIN="$SYM "
 [ -f "$HOME/Personal/bin/toggle-turbo" ] && DATA="$FIN | bash=$HOME/Personal/bin/toggle-turbo onclick=bash" || DATA="$SYM"
 echo "$DATA"

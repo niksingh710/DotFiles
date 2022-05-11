@@ -1,4 +1,5 @@
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+# this line is here because of zsh-vi-mode command
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 MYLOC="`dirname ${(%):-%N}`"
 if [ -d "$MYLOC/completions/" ];then
   for f in "$MYLOC/completions/"*;do
@@ -8,4 +9,3 @@ fi
 
 # Starship prompt
 hash starship 2>/dev/null && eval "$(starship init zsh)"
-

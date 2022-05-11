@@ -1,6 +1,6 @@
 local header = {
   type = "text",
-  val = require("header").dashboard(),
+  val = require("niksingh710.header").dashboard(),
   opts = {
     position = "center",
     hl = "Comment",

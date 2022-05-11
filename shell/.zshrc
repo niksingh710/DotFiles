@@ -1,6 +1,8 @@
+COMPLETION_WAITING_DOTS="true"
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(
-  vi-mode
+  zsh-vi-mode
+  fzf
   web-search
   colored-man-pages
   command-not-found
@@ -12,5 +14,3 @@ plugins=(
 [ -d "$HOME/.config/myconf/zsh/zsh_func" ] && fpath+="$HOME/.config/myconf/zsh/zsh_func"
 source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.nikhilrc" ] && source "$HOME/.nikhilrc"
-
-

@@ -2,9 +2,10 @@
 # created by Nikhil Singh (https://t.me/niksingh710) (https://github.com/niksingh710)
 CONFIGDIR="$HOME/.config"
 MCONFIGDIR="$HOME/.config/myconf"
+
+[ -f "$MCONFIGDIR/variables" ] && source "$MCONFIGDIR/variables"
 [ -f "$MCONFIGDIR/pathmod" ] && source "$MCONFIGDIR/pathmod"
 [ -f "$MCONFIGDIR/aliases/alias" ] && source "$MCONFIGDIR/aliases/alias"
-[ -f "$MCONFIGDIR/variables" ] && source "$MCONFIGDIR/variables"
 [ -f "$MCONFIGDIR/func" ] && source "$MCONFIGDIR/func"
 
 if hash fnm 2>/dev/null;then
@@ -27,10 +28,11 @@ fi
 
 # shell sourcing (These all get sourced on the basis of which shell in process)
 CURSHELL=$(basename `readlink /proc/$$/exe`)
+if [ $CURSHELL = "bash" ];then
+  [ -f "$MCONFIGDIR/bash/bash" ] && source "$MCONFIGDIR/bash/bash"
+fi
+
 if [ $CURSHELL = "zsh" ];then
   [ -f "$MCONFIGDIR/zsh/zsh" ] && source "$MCONFIGDIR/zsh/zsh"
 fi
 
-if [ $CURSHELL = "bash" ];then
-  [ -f "$MCONFIGDIR/bash/bash" ] && source "$MCONFIGDIR/bash/bash"
-fi

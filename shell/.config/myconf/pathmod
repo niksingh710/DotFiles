@@ -18,6 +18,7 @@ PATHLIST=(
    "$HOME/go/bin"
    "$HOME/flutter/bin"
    "$HOME/.fnm"
+   "$PNPM_HOME"
 )
 add_path ${PATHLIST[@]}
 unset -f add_path

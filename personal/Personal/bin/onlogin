@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ -f /home/niksingh710/Personal/bin/temp-clear ];then
+  eval /home/niksingh710/Personal/bin/temp-clear  
+fi
+if hash touchegg 2>/dev/null;then
+  touchegg
+fi

@@ -34,7 +34,7 @@ EOF
 exit
 }
 
-TPATH="$HOME/Pictures/collage/timetable"
+TPATH="$HOME/Pictures/college/timetable"
 
 show(){
   if ! hash feh 2>/dev/null;then

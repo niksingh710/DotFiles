@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo iptables -P FORWARD ACCEPT;sudo iptables -F FORWARD

@@ -64,7 +64,6 @@ fi
 [ -f "/usr/local/bin/mv" ] && alias mv='/usr/local/bin/mv -g'
 
 alias mkdir='mkdir -p'
-alias sudo='sudo '
 alias myip="echo `hostname -I | awk '{print $1}'`"
 alias mygip="curl -s http://ipecho.net/plain; echo"
 alias myips='echo "local : `myip` \nglobal: `mygip`"'
@@ -79,6 +78,7 @@ alias tb='nc termbin.com 9999'
 alias c='clear'
 alias e='$EDITOR'
 alias se='sudo $EDITOR'
+alias sudo='sudo '
 
 # SSH 
 alias ssh-list="ss | grep -i ssh"

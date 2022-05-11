@@ -1,0 +1,134 @@
+#!/bin/bash
+
+# trap ctrl_c INT
+
+# function ctrl_c() {
+#         echo "you pressed Ctrl-C"
+#         exit 0
+# }
+ # pandoc -f markdown --css "${POSAUNE_DIR}/${STYLESHEET}" --to=html5 "${FILENAME}.md" -o "${FILENAME}.html" --self-contained && wkhtmltopdf --dpi 500 "${FILENAME}.html" "${FILENAME}.pdf" && echo "Generated ${FILENAME}.html and ${FILENAME}.pdf"
+# while inotifywait -e close_write ./test.md; do echo "whooo hooo i am changed"; done
+# okular ./test.pdf >/dev/null 2>&1 &
+
+CLEAN=false
+TOEVAL='pandoc --top-level-division=chapter -f markdown --css "$CSS" --to=html5 "$MDPATH" -o "$DUMPDIR/$FILENAME.html" --self-contained && wkhtmltopdf --dpi 500 "$DUMPDIR/$FILENAME.html" "$OUTPATH/$FILENAME.pdf" && echo "Generated ${FILENAME}.html and ${FILENAME}.pdf"'
+MDPATH=""
+FILENAME=""
+OUTPATH=""
+CSS=""
+DUMPDIR="$HOME/.tmp-livemdpdf"
+for i in "$@"; do
+  case $i in
+    -h|--help)
+      help
+      shift # past argument=value
+      ;;
+    --clean)
+      CLEAN=true
+      shift # past argument with no value
+      ;;
+    -m=*|--markdown=*)
+      MDPATH="${i#*=}"
+      shift # past argument=value
+      ;;
+    -o=*|--output=*)
+      OUTPATH="${i#*=}"
+      shift # past argument=value
+      ;;
+    -c=*|--css=*)
+      CSS="${i#*=}"
+      shift # past argument=value
+      ;;
+    -d=*|--dump-dir=*)
+      DUMPDIR="${i#*=}"
+      shift # past argument=value
+      ;;
+    -*|--*)
+      echo "Unknown option $i"
+      exit 1
+      ;;
+    *)
+      echo "I don't know what are you trying to say to me"
+      ;;
+  esac
+done
+
+if [ $CLEAN = true ];then
+  trap ctrl_c INT
+fi
+
+function ctrl_c() {
+  echo "Cleaning Dump Dir...."
+  rm $DUMPDIR/$FILENAME.html
+  exit 0
+}
+
+function help(){
+  echo  "Did you call help?"
+}
+
+function notFound(){
+  echo -e "The $1: $2 is not found."
+  echo -e "Please make sure that you provided a valid path. don't use '~/' use '\$HOME' instead"
+}
+
+function checks(){
+  if [ -z $MDPATH ];then
+    echo -e "Provide The Markdown File to be Converted."
+    exit 1
+  else
+    if [[ ! -f $MDPATH ]];then 
+      # echo -e "The File: $MDPATH is not found"
+      notFound "File" $MDPATH
+      exit 1
+    fi
+    MDPATH="`realpath $MDPATH`"
+    FILENAME="`basename ${MDPATH%.*}`"
+  fi
+
+  if [ -z $OUTPATH ];then
+    echo -e "Provide The Output Path where the file need to be placed after conversion."
+    exit 1
+  else
+    if [[ ! -d $OUTPATH ]];then
+      notFound "Dir" $OUTPATH
+      exit 1
+    fi
+    OUTPATH="`realpath $OUTPATH`"
+  fi
+
+  if [[ -z $CSS ]];then    
+    echo -e "Css argument is not provided proceeding without css ..."
+    TOEVAL='pandoc -f markdown --to=html5 "$MDPATH" -o "$DUMPDIR/$FILENAME.html" --self-contained && wkhtmltopdf --dpi 500 "$DUMPDIR/$FILENAME.html" "$OUTPATH/$FILENAME.pdf" && echo "Generated ${FILENAME}.html and ${FILENAME}.pdf"'
+  else
+    if [[ ! -f $CSS ]];then
+      notFound "File" $CSS
+      exit 1
+    fi
+    CSS="`realpath ${CSS#*=}`"
+  fi
+
+  if [[ $DUMPDIR == $HOME ]];then
+    echo "Cannot do this!!"
+    exit 1
+  fi
+  
+  if [[ ! -z $DUMPDIR ]];then    
+    if [[ ! -d $DUMPDIR ]];then
+      notFound "Dir" $DUMPDIR
+      exit 1
+    fi
+    DUMPDIR="`realpath ${DUMPDIR#*=}`"
+  fi
+  
+}
+
+checks
+eval $TOEVAL
+# xdg-open "$OUTPATH/$FILENAME.pdf" >/dev/null 2>&1
+zathura "$OUTPATH/$FILENAME.pdf" >/dev/null 2>&1 &
+while inotifywait -e close_write "$MDPATH"; do
+    eval $TOEVAL
+done
+
+# while inotifywait -e close_write ./test.md; do echo "whooo hooo i am changed"; done

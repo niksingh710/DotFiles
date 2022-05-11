@@ -39,15 +39,15 @@ lvim.lsp.automatic_servers_installation = true
 
 -- To load specific servers on single file format
 local server_opts = {
-    single_file_support = true,
+  single_file_support = true,
 }
-local servers ={
+local servers = {
   "gopls",
   "tsserver",
   "pyright",
   "jdtls",
+  "prosemd_lsp",
 }
 for _, v in ipairs(servers) do
-    require("lvim.lsp.manager").setup(v,server_opts)
+  require("lvim.lsp.manager").setup(v, server_opts)
 end
-

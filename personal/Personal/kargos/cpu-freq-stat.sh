@@ -25,7 +25,6 @@
 #           /____/\___/_/  /_/ .___/\__/____/  
 #                           /_/                
 # (niksingh710) [https://github.com/niksingh710] [https://t.me/niksingh710]
-GOV=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
-FIN="$GOV ▎"
-[ -f "$HOME/Personal/bin/toggle-cpu" ] && DATA="$FIN | bash=$HOME/Personal/bin/toggle-cpu onclick=bash" || DATA="$GOV"
-echo "$DATA"
+DATAPER=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
+FIN="$DATAPER"
+echo "$FIN"
