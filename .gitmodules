@@ -7,3 +7,4 @@
 [submodule "icons/.local/share/icons/la-capitaine"]
 	path = icons/.local/share/icons/la-capitaine
 	url = https://github.com/keeferrourke/la-capitaine-icon-theme.git
+	ignore = dirty
