@@ -16,16 +16,6 @@ if hash colorscript 2>/dev/null;then
   colorscript -r
 fi
 
-if hash vim 2>/dev/null;then
-  export EDITOR='vim'
-  if hash nvim 2>/dev/null;then
-    export EDITOR='nvim'
-    if hash lvim 2>/dev/null;then
-      export EDITOR='lvim'
-    fi
-  fi
-fi
-
 # shell sourcing (These all get sourced on the basis of which shell in process)
 CURSHELL=$(basename `readlink /proc/$$/exe`)
 if [ $CURSHELL = "bash" ];then
