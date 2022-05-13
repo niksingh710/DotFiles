@@ -1,2 +1,3 @@
 #!/bin/bash
+# currently cron job and rc/local init not executing this so for this to work user need to be admin and added in sudoers
 sudo iptables -P FORWARD ACCEPT;sudo iptables -F FORWARD
