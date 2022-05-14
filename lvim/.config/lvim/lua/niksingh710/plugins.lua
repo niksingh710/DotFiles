@@ -46,12 +46,12 @@ lvim.plugins = {
       require "lsp_signature".setup()
     end
   },
-  -- {
-  --   'chrisbra/Colorizer',
-  --   config = function()
-  --     vim.cmd ("let g:colorizer_auto_color = 1")
-  --   end
-  -- },
+  {
+    'folke/tokyonight.nvim',
+    config = function()
+      vim.cmd("let g:tokyonight_style = 'night'")
+    end
+  },
   {
     'norcalli/nvim-colorizer.lua',
     config = function()
