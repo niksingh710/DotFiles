@@ -2,13 +2,12 @@
 
 add_path(){
     ARR=("$@")
-    NEWPATH="$PATH"
-    export PATH=""
     for i in "${ARR[@]}"
       do
-       [ -d $i ] && NEWPATH=$NEWPATH:$i
+       if [ -d $i ] && [[ ":$PATH:" != *":$i:"* ]]; then
+        export PATH="${PATH:+"$PATH:"}$i"
+       fi
       done
-    export PATH=$NEWPATH
 }
 PATHLIST=(
    "$HOME/.local/bin"
