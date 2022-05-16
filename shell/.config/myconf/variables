@@ -18,7 +18,5 @@ else
   export FZF_CTRL_T_OPTS="--preview 'cat -p --color=always {}'"
 fi
 export BAT_THEME="TwoDark"
-ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
 export PNPM_HOME="/home/niksingh710/.local/share/pnpm"
 

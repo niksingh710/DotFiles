@@ -1,4 +1,4 @@
-local options={
+local options = {
   backup = false, -- creates a backup file'
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   cmdheight = 2, -- more space in the neovim command line for displaying messages
@@ -42,6 +42,7 @@ local options={
   spelllang = "en",
   scrolloff = 8, -- is one of my fav
   sidescrolloff = 8,
+  autoindent = true
 }
 
 for k, v in pairs(options) do

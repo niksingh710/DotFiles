@@ -1,36 +1,8 @@
-# Personal System configs
+# Personal Config files 
 
-## Shell
+## Requirements:
+  > There is not too much Requirements as the structure is broke in multiple applications level.
 
-This dir contains my shell configs.
-I use zsh and bash shell so i have my own rc file that gets passed through both of `~/.zshrc` and `~/.bashrc`
-
-To setup this `stow` command is needed.
-
-
-```txt
- .
-├──  .config
-│  ├──  zsh
-│  │  └──  zsh
-│  ├──  bash
-│  │  └──  bash
-│  └──  myconf
-│     ├──  aliases
-│     │  ├──  distro
-│     │  │  └──  ubuntu
-│     │  └──  alias
-│     └──  pathmod
-├──  .nikhilrc
-├──  .zshrc
-└──  .bashrc
-```
-
-Here `.bashrc` and `.zshrc` sources `.nikhilrc` that have common commands that are compatible with both shells.
-
-But then there is a if condition checking `ps` to identify current running shell and exec custom shell based command.
-
-## personal
-
-This dir contains my personal binaries and misc stuff commonly used by other configs.
-
+  - stow
+    > This command is nedded for this to be used easily as manually linking path is a nightmare.
+    `sudo apt install stow # for debian and it's child distro` 

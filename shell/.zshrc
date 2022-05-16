@@ -1,4 +1,12 @@
 COMPLETION_WAITING_DOTS="true"
+ZSH_WEB_SEARCH_ENGINES=(
+  reddit "https://www.reddit.com/search/?q="
+  yt "https://www.youtube.com/results?search_query="
+  wikki "https://en.wikipedia.org/wiki/"
+  gmap "https://www.google.co.in/maps/place/"
+)
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(
   zsh-vi-mode
