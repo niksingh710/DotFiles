@@ -89,11 +89,11 @@ Color=250,254,255
 Color=236,240,241
 
 [General]
-Anchor=0.5,0.5
+Anchor=1,1
 Blur=true
 ColorRandomization=false
 Description=Flatui
-FillStyle=Tile
-Opacity=0.5
-Wallpaper=
-WallpaperOpacity=1
+FillStyle=NoScaling
+Opacity=0.4
+Wallpaper=/home/niksingh710/Pictures/Personal/written.png
+WallpaperOpacity=0.3

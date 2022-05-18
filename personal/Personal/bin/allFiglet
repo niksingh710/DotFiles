@@ -1,0 +1,32 @@
+#!/bin/bash
+if [ ! -d "/usr/share/figlet/" ];then
+  echo "no figlet dir"
+  exit 1
+fi
+NOALL=true
+if [ $# -eq 1 ];then
+  if [ $1 = "-a" ];then
+    NOALL=false
+  fi
+fi
+function pause(){
+ read -s -n 1 -p "Press any key to continue . . ."
+ echo ""
+}
+arr=(/usr/share/figlet/*.*lf)
+
+echo ${arr[@]}
+for i in "${arr[@]}"
+  do
+    if [[ $NOALL = true ]];then
+      clear
+    fi
+    FONT=$(basename "$i")
+    echo -e "${FONT%.*}:\n"
+    figlet -c -f "$i" "Nikhil Ashish"
+    echo -e "\n"
+    if [[ $NOALL = true ]];then
+      pause
+      clear
+    fi
+done

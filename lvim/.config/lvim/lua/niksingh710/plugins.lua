@@ -57,12 +57,12 @@ lvim.plugins = {
     config = function()
       require("colorizer").setup {
         '*';
-        css = {
-          RGB      = true; -- #RGB hex codes
-          RRGGBB   = true; -- #RRGGBB hex codes
+        DEFAULT_OPTIONS = {
+          RGB      = true; -- #RGB hex codes #123
+          RRGGBB   = true; -- #RRGGBB hex codes #223344
           names    = true; -- "Name" codes like Blue,BLUE,blue
-          RRGGBBAA = true; -- #RRGGBBAA hex codes
-          rgb_fn   = true; -- CSS rgb() and rgba() functions
+          RRGGBBAA = true; -- #RRGGBBAA hex codes #44556611
+          rgb_fn   = true; -- CSS rgb() and rgba() functions rgb(22,33,44)
           hsl_fn   = true; -- CSS hsl() and hsla() functions
           css      = true; -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
           css_fn   = true; -- Enable all CSS *functions*: rgb_fn, hsl_fn
@@ -74,5 +74,49 @@ lvim.plugins = {
   },
   { "p00f/nvim-ts-rainbow" },
   { "windwp/nvim-ts-autotag" },
-  { 'mattn/emmet-vim' },
+  {
+    "aca/emmet-ls",
+    config = function()
+      local lspconfig = require("lspconfig")
+      local configs = require("lspconfig/configs")
+
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
+      capabilities.textDocument.completion.completionItem.resolveSupport = {
+        properties = {
+          "documentation",
+          "detail",
+          "additionalTextEdits",
+        },
+      }
+
+      if not lspconfig.emmet_ls then
+        configs.emmet_ls = {
+          default_config = {
+            cmd = { "emmet-ls", "--stdio" },
+            filetypes = {
+              "html",
+              "css",
+              "javascript",
+              "typescript",
+              "eruby",
+              "typescriptreact",
+              "javascriptreact",
+              "svelte",
+              "vue",
+              "md",
+            },
+            settings = {},
+          },
+        }
+      end
+      lspconfig.emmet_ls.setup({ capabilities = capabilities })
+    end,
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    config = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
 }

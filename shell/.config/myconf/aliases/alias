@@ -75,6 +75,7 @@ alias cpu-governer='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 alias cpu-turbo='[ $(cat /sys/devices/system/cpu/intel_pstate/no_turbo) = 0 ] && echo "Turbo: On" || echo "Turbo: Off"'
 alias gc='git clone $@'
 alias tb='nc termbin.com 9999'
+alias clear='clear -x'
 alias c='clear'
 alias e='$EDITOR'
 alias se='sudo $EDITOR'
@@ -141,7 +142,7 @@ check_alias speed-test speedtest "speed-test"
 check_alias glow mcat "glow $@"
 check_alias bastet tetris "bastet"
 check_alias nsnake snake "nsnake"
-check_alias trash rm "trash"
+check_alias trash rm "trash-put"
 
 if [ -f "$HOME/Personal/misc/ascii" ];then
 	check_alias neofetch neofetch "neofetch --ascii ~/Personal/misc/ascii"

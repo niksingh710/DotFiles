@@ -43,6 +43,7 @@ local servers = {
   "pyright",
   "jdtls",
   "prosemd_lsp",
+  "bashls",
 }
 for _, v in ipairs(servers) do
   require("lvim.lsp.manager").setup(v, server_opts)
