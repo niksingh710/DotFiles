@@ -27,4 +27,4 @@
 # (niksingh710) [https://github.com/niksingh710] [https://t.me/niksingh710]
 DATAPER=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
 FIN="$DATAPER"
-echo "$FIN"
+echo "$FIN | bash='systemmonitor' onclick=bash"

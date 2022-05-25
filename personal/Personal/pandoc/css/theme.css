@@ -1,4 +1,3 @@
-
 /* ----- Global settings ----------------------------------------------- {{{ */
 
 :root {
@@ -27,11 +26,11 @@
 
   /* --- Text --- */
 
-  /* --font-family-prose: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif; */
-  /* --font-family-heading: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif; */
+  --font-family-prose: Comfortaa, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family-heading: Comfortaa, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-  --font-family-heading: "Times New Roman";
-  --font-family-prose: "Times New Roman";
   --font-family-code: Menlo, monospace;
   --side-note-number-font-family: var(--font-family-prose);
 
@@ -105,11 +104,13 @@
   --main-width-narrow: 550px;
 }
 
-*, *:after, *:before {
+*,
+*:after,
+*:before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -188,8 +189,8 @@ sup {
   font-size: var(--side-note-font-size);
   font-weight: 700;
   font-family: var(--side-note-number-font-family);
-  -webkit-font-feature-settings: "tnum" 1;
-  font-feature-settings: "tnum" 1;
+  -webkit-font-feature-settings: 'tnum' 1;
+  font-feature-settings: 'tnum' 1;
 
   /* Mimic 'vertical-align: super' (browser style for sup tag)
    * without causing a gap in our text's implicit grid. */
@@ -203,21 +204,25 @@ sup {
 }
 
 /* Make the superscript hang. */
-.sidenote:before { left: var(--side-note-number-hang-left); }
+.sidenote:before {
+  left: var(--side-note-number-hang-left);
+}
 /* Get first first column of first row to line up with other rows. */
-.sidenote { text-indent: var(--side-note-text-indent); }
+.sidenote {
+  text-indent: var(--side-note-text-indent);
+}
 
 /*}}} */
 /* --- Side note input controls --- {{{ */
 
 input.margin-toggle {
-    display: none;
+  display: none;
 }
 label.margin-toggle:not(.sidenote-number) {
-    display: none;
+  display: none;
 }
 label.sidenote-number {
-    display: inline;
+  display: inline;
 }
 
 /* Unfortunately, variables aren't in scope here.
@@ -247,12 +252,15 @@ label.sidenote-number {
 /* }}} */
 /* ----- Headings ------------------------------------------------------ {{{ */
 
-h1, h2 {
+h1,
+h2 {
   font-family: var(--font-family-heading);
   font-weight: var(--heading-font-weight);
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-weight: normal;
 }
 
@@ -299,16 +307,31 @@ h3 {
   font-weight: bold;
 }
 
-h1:not(.title) + *, h1:not(.title) + p { margin-top: var(--h1-margin-bottom); }
-h2 + *, h2 + p                         { margin-top: var(--h2-margin-bottom); }
-h3 + *, h3 + p                         { margin-top: 0; }
+h1:not(.title) + *,
+h1:not(.title) + p {
+  margin-top: var(--h1-margin-bottom);
+}
+h2 + *,
+h2 + p {
+  margin-top: var(--h2-margin-bottom);
+}
+h3 + *,
+h3 + p {
+  margin-top: 0;
+}
 
 /* }}} */
 /* ----- Prose --------------------------------------------------------- {{{ */
 
-p, main > ul, main > ol, div.sourceCode, main > pre, img, table {
+p,
+main > ul,
+main > ol,
+div.sourceCode,
+main > pre,
+img,
+table {
   margin-top: var(--line-height);
-  margin-bottom: var(--line-height)
+  margin-bottom: var(--line-height);
 }
 
 ul:not(.task-list) {
@@ -327,7 +350,7 @@ ul.task-list > li {
   position: relative;
 }
 
-ul.task-list > li > input[type="checkbox"] {
+ul.task-list > li > input[type='checkbox'] {
   position: absolute;
   left: calc(-1 * var(--ul-indent-size));
   height: var(--line-height);
@@ -337,25 +360,61 @@ ol > li {
   padding-left: var(--ol-li-padding-left);
 }
 
-ol                         { list-style-type: decimal; }
-ol ol                      { list-style-type: lower-alpha; }
-ol ol ol                   { list-style-type: lower-roman; }
-ol ol ol ol                { list-style-type: decimal; }
-ol ol ol ol ol             { list-style-type: lower-alpha; }
-ol ol ol ol ol ol          { list-style-type: lower-roman; }
-ol ol ol ol ol ol ol       { list-style-type: decimal; }
-ol ol ol ol ol ol ol ol    { list-style-type: lower-alpha; }
-ol ol ol ol ol ol ol ol ol { list-style-type: lower-roman; }
+ol {
+  list-style-type: decimal;
+}
+ol ol {
+  list-style-type: lower-alpha;
+}
+ol ol ol {
+  list-style-type: lower-roman;
+}
+ol ol ol ol {
+  list-style-type: decimal;
+}
+ol ol ol ol ol {
+  list-style-type: lower-alpha;
+}
+ol ol ol ol ol ol {
+  list-style-type: lower-roman;
+}
+ol ol ol ol ol ol ol {
+  list-style-type: decimal;
+}
+ol ol ol ol ol ol ol ol {
+  list-style-type: lower-alpha;
+}
+ol ol ol ol ol ol ol ol ol {
+  list-style-type: lower-roman;
+}
 
-ul                         { list-style-type: disc; }
-ul ul                      { list-style-type: circle; }
-ul ul ul                   { list-style-type: square; }
-ul ul ul ul                { list-style-type: disc; }
-ul ul ul ul ul             { list-style-type: circle; }
-ul ul ul ul ul ul          { list-style-type: square; }
-ul ul ul ul ul ul ul       { list-style-type: disc; }
-ul ul ul ul ul ul ul ul    { list-style-type: circle; }
-ul ul ul ul ul ul ul ul ul { list-style-type: square; }
+ul {
+  list-style-type: disc;
+}
+ul ul {
+  list-style-type: circle;
+}
+ul ul ul {
+  list-style-type: square;
+}
+ul ul ul ul {
+  list-style-type: disc;
+}
+ul ul ul ul ul {
+  list-style-type: circle;
+}
+ul ul ul ul ul ul {
+  list-style-type: square;
+}
+ul ul ul ul ul ul ul {
+  list-style-type: disc;
+}
+ul ul ul ul ul ul ul ul {
+  list-style-type: circle;
+}
+ul ul ul ul ul ul ul ul ul {
+  list-style-type: square;
+}
 
 blockquote {
   border-left: 1px solid var(--color-text-secondary);
@@ -368,7 +427,9 @@ blockquote > p {
   margin-top: 0;
 }
 
-blockquote em, blockquote i, blockquote .sidenote-wrapper {
+blockquote em,
+blockquote i,
+blockquote .sidenote-wrapper {
   font-style: normal;
 }
 
@@ -380,8 +441,12 @@ hr {
   border-width: 1px 0 0;
 }
 
-a code, a:link code, a:visited code,
-a, a:link, a:visited {
+a code,
+a:link code,
+a:visited code,
+a,
+a:link,
+a:visited {
   color: var(--color-link);
   text-decoration: none;
 }
@@ -390,22 +455,39 @@ a:hover {
   text-decoration: underline;
 }
 
-span.mark, mark {
+span.mark,
+mark {
   /* Reset browser styles */
   color: inherit;
 
   padding: 2px 0 1px;
 }
-span.mark.red,    mark.red    { background-color: var(--highlight-red);    }
-span.mark.yellow, mark.yellow { background-color: var(--highlight-yellow); }
-span.mark.green,  mark.green  { background-color: var(--highlight-green);  }
-span.mark.blue,   mark.blue   { background-color: var(--highlight-blue);   }
-span.mark.purple, mark.purple { background-color: var(--highlight-purple); }
+span.mark.red,
+mark.red {
+  background-color: var(--highlight-red);
+}
+span.mark.yellow,
+mark.yellow {
+  background-color: var(--highlight-yellow);
+}
+span.mark.green,
+mark.green {
+  background-color: var(--highlight-green);
+}
+span.mark.blue,
+mark.blue {
+  background-color: var(--highlight-blue);
+}
+span.mark.purple,
+mark.purple {
+  background-color: var(--highlight-purple);
+}
 
 .subtitle {
   margin-top: 0;
 }
-.author, .date {
+.author,
+.date {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -415,8 +497,12 @@ span.mark.purple, mark.purple { background-color: var(--highlight-purple); }
 }
 
 /* Pandoc utility classes */
-span.smallcaps{ font-variant: small-caps; }
-span.underline{ text-decoration: underline; }
+span.smallcaps {
+  font-variant: small-caps;
+}
+span.underline {
+  text-decoration: underline;
+}
 
 .katex-display {
   background: var(--background-color);
@@ -487,7 +573,8 @@ code.sourceCode::selection {
   background: transparent;
 }
 
-.wide > pre, .wide > div.sourceCode {
+.wide > pre,
+.wide > div.sourceCode {
   /* Put this in front of the table of contents */
   transform: translateZ(0px);
 }
@@ -581,51 +668,133 @@ pre > code.sourceCode > span::after {
   background-color: var(--color-code-highlight-bg);
   z-index: -1;
   left: calc(var(--line-numbers-width) - var(--code-block-side-padding));
-  right: calc(var(--line-numbers-negative-width) - var(--code-block-side-padding));
+  right: calc(
+    var(--line-numbers-negative-width) - var(--code-block-side-padding)
+  );
   top: 0;
   height: 100%;
 }
 
-pre.hl-1  > code.sourceCode > span:nth-of-type(1)::after  { content: ""; }
-pre.hl-2  > code.sourceCode > span:nth-of-type(2)::after  { content: ""; }
-pre.hl-3  > code.sourceCode > span:nth-of-type(3)::after  { content: ""; }
-pre.hl-4  > code.sourceCode > span:nth-of-type(4)::after  { content: ""; }
-pre.hl-5  > code.sourceCode > span:nth-of-type(5)::after  { content: ""; }
-pre.hl-6  > code.sourceCode > span:nth-of-type(6)::after  { content: ""; }
-pre.hl-7  > code.sourceCode > span:nth-of-type(7)::after  { content: ""; }
-pre.hl-8  > code.sourceCode > span:nth-of-type(8)::after  { content: ""; }
-pre.hl-9  > code.sourceCode > span:nth-of-type(9)::after  { content: ""; }
-pre.hl-10 > code.sourceCode > span:nth-of-type(10)::after { content: ""; }
-pre.hl-11 > code.sourceCode > span:nth-of-type(11)::after { content: ""; }
-pre.hl-12 > code.sourceCode > span:nth-of-type(12)::after { content: ""; }
-pre.hl-13 > code.sourceCode > span:nth-of-type(13)::after { content: ""; }
-pre.hl-14 > code.sourceCode > span:nth-of-type(14)::after { content: ""; }
-pre.hl-15 > code.sourceCode > span:nth-of-type(15)::after { content: ""; }
-pre.hl-16 > code.sourceCode > span:nth-of-type(16)::after { content: ""; }
-pre.hl-17 > code.sourceCode > span:nth-of-type(17)::after { content: ""; }
-pre.hl-18 > code.sourceCode > span:nth-of-type(18)::after { content: ""; }
-pre.hl-19 > code.sourceCode > span:nth-of-type(19)::after { content: ""; }
-pre.hl-20 > code.sourceCode > span:nth-of-type(20)::after { content: ""; }
-pre.hl-21 > code.sourceCode > span:nth-of-type(21)::after { content: ""; }
-pre.hl-22 > code.sourceCode > span:nth-of-type(22)::after { content: ""; }
-pre.hl-23 > code.sourceCode > span:nth-of-type(23)::after { content: ""; }
-pre.hl-24 > code.sourceCode > span:nth-of-type(24)::after { content: ""; }
-pre.hl-25 > code.sourceCode > span:nth-of-type(25)::after { content: ""; }
-pre.hl-26 > code.sourceCode > span:nth-of-type(26)::after { content: ""; }
-pre.hl-27 > code.sourceCode > span:nth-of-type(27)::after { content: ""; }
-pre.hl-28 > code.sourceCode > span:nth-of-type(28)::after { content: ""; }
-pre.hl-29 > code.sourceCode > span:nth-of-type(29)::after { content: ""; }
-pre.hl-30 > code.sourceCode > span:nth-of-type(30)::after { content: ""; }
-pre.hl-31 > code.sourceCode > span:nth-of-type(31)::after { content: ""; }
-pre.hl-32 > code.sourceCode > span:nth-of-type(32)::after { content: ""; }
-pre.hl-33 > code.sourceCode > span:nth-of-type(33)::after { content: ""; }
-pre.hl-34 > code.sourceCode > span:nth-of-type(34)::after { content: ""; }
-pre.hl-35 > code.sourceCode > span:nth-of-type(35)::after { content: ""; }
-pre.hl-36 > code.sourceCode > span:nth-of-type(36)::after { content: ""; }
-pre.hl-37 > code.sourceCode > span:nth-of-type(37)::after { content: ""; }
-pre.hl-38 > code.sourceCode > span:nth-of-type(38)::after { content: ""; }
-pre.hl-39 > code.sourceCode > span:nth-of-type(39)::after { content: ""; }
-pre.hl-40 > code.sourceCode > span:nth-of-type(40)::after { content: ""; }
+pre.hl-1 > code.sourceCode > span:nth-of-type(1)::after {
+  content: '';
+}
+pre.hl-2 > code.sourceCode > span:nth-of-type(2)::after {
+  content: '';
+}
+pre.hl-3 > code.sourceCode > span:nth-of-type(3)::after {
+  content: '';
+}
+pre.hl-4 > code.sourceCode > span:nth-of-type(4)::after {
+  content: '';
+}
+pre.hl-5 > code.sourceCode > span:nth-of-type(5)::after {
+  content: '';
+}
+pre.hl-6 > code.sourceCode > span:nth-of-type(6)::after {
+  content: '';
+}
+pre.hl-7 > code.sourceCode > span:nth-of-type(7)::after {
+  content: '';
+}
+pre.hl-8 > code.sourceCode > span:nth-of-type(8)::after {
+  content: '';
+}
+pre.hl-9 > code.sourceCode > span:nth-of-type(9)::after {
+  content: '';
+}
+pre.hl-10 > code.sourceCode > span:nth-of-type(10)::after {
+  content: '';
+}
+pre.hl-11 > code.sourceCode > span:nth-of-type(11)::after {
+  content: '';
+}
+pre.hl-12 > code.sourceCode > span:nth-of-type(12)::after {
+  content: '';
+}
+pre.hl-13 > code.sourceCode > span:nth-of-type(13)::after {
+  content: '';
+}
+pre.hl-14 > code.sourceCode > span:nth-of-type(14)::after {
+  content: '';
+}
+pre.hl-15 > code.sourceCode > span:nth-of-type(15)::after {
+  content: '';
+}
+pre.hl-16 > code.sourceCode > span:nth-of-type(16)::after {
+  content: '';
+}
+pre.hl-17 > code.sourceCode > span:nth-of-type(17)::after {
+  content: '';
+}
+pre.hl-18 > code.sourceCode > span:nth-of-type(18)::after {
+  content: '';
+}
+pre.hl-19 > code.sourceCode > span:nth-of-type(19)::after {
+  content: '';
+}
+pre.hl-20 > code.sourceCode > span:nth-of-type(20)::after {
+  content: '';
+}
+pre.hl-21 > code.sourceCode > span:nth-of-type(21)::after {
+  content: '';
+}
+pre.hl-22 > code.sourceCode > span:nth-of-type(22)::after {
+  content: '';
+}
+pre.hl-23 > code.sourceCode > span:nth-of-type(23)::after {
+  content: '';
+}
+pre.hl-24 > code.sourceCode > span:nth-of-type(24)::after {
+  content: '';
+}
+pre.hl-25 > code.sourceCode > span:nth-of-type(25)::after {
+  content: '';
+}
+pre.hl-26 > code.sourceCode > span:nth-of-type(26)::after {
+  content: '';
+}
+pre.hl-27 > code.sourceCode > span:nth-of-type(27)::after {
+  content: '';
+}
+pre.hl-28 > code.sourceCode > span:nth-of-type(28)::after {
+  content: '';
+}
+pre.hl-29 > code.sourceCode > span:nth-of-type(29)::after {
+  content: '';
+}
+pre.hl-30 > code.sourceCode > span:nth-of-type(30)::after {
+  content: '';
+}
+pre.hl-31 > code.sourceCode > span:nth-of-type(31)::after {
+  content: '';
+}
+pre.hl-32 > code.sourceCode > span:nth-of-type(32)::after {
+  content: '';
+}
+pre.hl-33 > code.sourceCode > span:nth-of-type(33)::after {
+  content: '';
+}
+pre.hl-34 > code.sourceCode > span:nth-of-type(34)::after {
+  content: '';
+}
+pre.hl-35 > code.sourceCode > span:nth-of-type(35)::after {
+  content: '';
+}
+pre.hl-36 > code.sourceCode > span:nth-of-type(36)::after {
+  content: '';
+}
+pre.hl-37 > code.sourceCode > span:nth-of-type(37)::after {
+  content: '';
+}
+pre.hl-38 > code.sourceCode > span:nth-of-type(38)::after {
+  content: '';
+}
+pre.hl-39 > code.sourceCode > span:nth-of-type(39)::after {
+  content: '';
+}
+pre.hl-40 > code.sourceCode > span:nth-of-type(40)::after {
+  content: '';
+}
 
 /* }}} */
 
@@ -641,7 +810,9 @@ figure + p {
   margin-top: var(--captioned-figure-gap);
 }
 
-figure > img, figure > pre, figure > div.sourceCode {
+figure > img,
+figure > pre,
+figure > div.sourceCode {
   margin-bottom: var(--figcaption-gap);
 }
 
@@ -675,8 +846,8 @@ figcaption code {
 /* ----- Tables -------------------------------------------------------- {{{ */
 
 table {
-  -webkit-font-feature-settings: "tnum" 1;
-  font-feature-settings: "tnum" 1;
+  -webkit-font-feature-settings: 'tnum' 1;
+  font-feature-settings: 'tnum' 1;
 
   font-size: var(--table-font-size);
   line-height: var(--table-line-height);
@@ -710,7 +881,8 @@ table pre code {
   transform: translateZ(0px);
 }
 
-table td, table th {
+table td,
+table th {
   border: 1px solid var(--color-border-heavy);
   padding: 5px 8px;
   min-width: 100px;
@@ -744,15 +916,26 @@ table > caption code {
   font-size: inherit;
   line-height: inherit;
 }
-.note table, .note td {
+.note table,
+.note td {
   border: none;
 }
 
-.note.red    td { background: var(--highlight-red); }
-.note.yellow td { background: var(--highlight-yellow); }
-.note.green  td { background: var(--highlight-green); }
-.note.blue   td { background: var(--highlight-blue); }
-.note.purple td { background: var(--highlight-purple); }
+.note.red td {
+  background: var(--highlight-red);
+}
+.note.yellow td {
+  background: var(--highlight-yellow);
+}
+.note.green td {
+  background: var(--highlight-green);
+}
+.note.blue td {
+  background: var(--highlight-blue);
+}
+.note.purple td {
+  background: var(--highlight-purple);
+}
 
 /* }}} */
 /* ----- Table of contents --------------------------------------------- {{{ */
@@ -869,7 +1052,9 @@ nav#TOC > input:checked + ul {
 
   width: var(--computed-width);
   max-width: var(--side-note-max-width);
-  margin-right: calc(-1 * min(var(--computed-width), var(--side-note-max-width)) - var(--margin-left));
+  margin-right: calc(
+    -1 * min(var(--computed-width), var(--side-note-max-width)) - var(--margin-left)
+  );
 }
 
 /* --- Side notes always visible --- {{{ */
@@ -898,7 +1083,9 @@ nav#TOC > input:checked + ul {
   .marginnote {
     --margin-left: calc(2 * var(--line-height));
     --margin-right: var(--margin-left);
-    --computed-width: calc((100vw - 100%) / 2 - var(--margin-right) - var(--margin-left));
+    --computed-width: calc(
+      (100vw - 100%) / 2 - var(--margin-right) - var(--margin-left)
+    );
   }
 
   .wide {
@@ -918,16 +1105,24 @@ nav#TOC > input:checked + ul {
 
   .wide.extra-wide figcaption,
   .wide.extra-wide table > caption {
-    margin-left: calc(((var(--extra-wide-scale-factor) - 1) / 2) * var(--main-width));
+    margin-left: calc(
+      ((var(--extra-wide-scale-factor) - 1) / 2) * var(--main-width)
+    );
     max-width: var(--main-width);
-    margin-right: calc(100% - var(--main-width) - (((var(--extra-wide-scale-factor) - 1) / 2) * var(--main-width)));
+    margin-right: calc(
+      100% - var(--main-width) -
+        (((var(--extra-wide-scale-factor) - 1) / 2) * var(--main-width))
+    );
   }
 
   .wide.full-width figcaption,
   .wide.full-width table > caption {
     margin-left: calc((100vw - var(--main-width)) / 2 - var(--line-height));
     max-width: var(--main-width);
-    margin-right: calc(100% - var(--main-width) - ((100vw - var(--main-width)) / 2 - var(--line-height)));
+    margin-right: calc(
+      100% - var(--main-width) -
+        ((100vw - var(--main-width)) / 2 - var(--line-height))
+    );
   }
 }
 
@@ -950,7 +1145,10 @@ nav#TOC > input:checked + ul {
   .marginnote {
     --margin-left: calc(2 * var(--line-height));
     --margin-right: var(--margin-left);
-    --computed-width: calc(100vw - var(--main-width) - calc(2 * var(--line-height)) - var(--margin-right) - var(--margin-left));
+    --computed-width: calc(
+      100vw - var(--main-width) - calc(2 * var(--line-height)) -
+        var(--margin-right) - var(--margin-left)
+    );
   }
 
   .wide {
@@ -1013,7 +1211,10 @@ nav#TOC > input:checked + ul {
   .marginnote {
     --margin-left: var(--line-height);
     --margin-right: var(--line-height);
-    --computed-width: calc(100vw - var(--main-width-narrow) - var(--line-height) - var(--margin-right) - var(--margin-left));
+    --computed-width: calc(
+      100vw - var(--main-width-narrow) - var(--line-height) -
+        var(--margin-right) - var(--margin-left)
+    );
   }
 
   .wide {
@@ -1134,44 +1335,48 @@ nav#TOC > input:checked + ul {
   }
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   page-break-after: avoid;
 }
 
-table, figure, pre {
+table,
+figure,
+pre {
   page-break-inside: avoid;
 }
 /* }}} */
 /* }}} */
 /* ----- overriding settings ----------------------------------------------- {{{ */
 
-body{
-  padding-left:120px;
-  padding-right:40px;
+body {
+  padding-left: 120px;
+  padding-right: 40px;
 }
-h1{
-  padding-top:80px;
-}
-    #pgno {
-     position: relative;
-     display: block;
-     background: rgba(60, 60, 60, 0.28) !important;
-     page-break-before: always; /*This style rule makes every page element start at the top of a new page:*/
-     counter-increment: page
-    }
-   /*page numbers*/
-   div#pgno:after {
-     content: "(" counter(page) ")";
-     position: absolute;
-     bottom: 0px;
-     left: 50%;
-     transform:translate(-50%,-50%);
-     z-index: 999;
-     font-size: 16px;
-    }
 
+h1 {
+  padding-top: 20px;
+}
+
+#pgno {
+  position: relative;
+  display: block;
+  background: rgba(60, 60, 60, 0.28) !important;
+  page-break-before: always; /*This style rule makes every page element start at the top of a new page:*/
+  counter-increment: page;
+}
+/*page numbers*/
+div#pgno:after {
+  content: '(' counter(page) ')';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  font-size: 16px;
+}
 
 /* }}} */
 /* vim:fdm=marker
 */
-

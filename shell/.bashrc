@@ -57,3 +57,4 @@ if ! shopt -oq posix; then
   fi
 fi
 [ -f "$HOME/.nikhilrc" ] && source "$HOME/.nikhilrc"
+

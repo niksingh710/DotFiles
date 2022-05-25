@@ -80,3 +80,5 @@ matches:
     replace: Δ
   - trigger: ":pbrk"
     replace: "<div style='page-break-before: always'></div>"
+  - trigger: ":ppbrk"
+    replace: "<div id='pgno'></div>"
