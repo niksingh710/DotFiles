@@ -56,5 +56,21 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+ # ███╗   ██╗██╗██╗  ██╗██╗  ██╗██╗██╗     
+ # ████╗  ██║██║██║ ██╔╝██║  ██║██║██║     
+ # ██╔██╗ ██║██║█████╔╝ ███████║██║██║     
+ # ██║╚██╗██║██║██╔═██╗ ██╔══██║██║██║     
+ # ██║ ╚████║██║██║  ██╗██║  ██║██║███████╗
+ # ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝
+
+ # ┌───────────────────────────────────────────────────────────────┐
+ # │   This is bashrc that is sourcing my custom rc file it need   │
+ # │   to be placed in the $HOME Dir so that bash shell can source │
+ # │   it when it gets executed.                                   │
+ # └───────────────────────────────────────────────────────────────┘
+
+
 [ -f "$HOME/.nikhilrc" ] && source "$HOME/.nikhilrc"
 

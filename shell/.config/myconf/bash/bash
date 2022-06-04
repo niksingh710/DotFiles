@@ -1,9 +1,12 @@
+# This is a bash config
 MYLOC=`dirname ${BASH_SOURCE[0]}`
 if [ -d "$MYLOC/completions/" ];then
   for f in "$MYLOC/completions/"*;do
     source "$f"
   done
 fi
+# zoxide
+eval "$(zoxide init bash)"
 
 # Starship prompt
 hash starship 2>/dev/null && eval "$(starship init bash)"

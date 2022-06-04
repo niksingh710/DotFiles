@@ -40,7 +40,7 @@ local options = {
 	wrap = true, -- display lines as one long line
 	spell = false,
 	spelllang = "en",
-	scrolloff = 8, -- is one of my fav
+	scrolloff = 0, -- is one of my fav
 	sidescrolloff = 8,
 	autoindent = true,
 }

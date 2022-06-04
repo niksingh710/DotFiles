@@ -6,7 +6,8 @@ check_alias(){
 	fi
 }
 # System based aliases
-MYLOC="/home/$USER/.config/myconf/aliases"
+# MYLOC="/home/$USER/.config/myconf/aliases"
+MYLOC=$(dirname ${BASH_SOURCE[0]:-$0})
 if [ -f /etc/os-release ]; then
   ID=$(cat /etc/os-release | awk '/^ID=/{print $0}' | sed 's/ID=//')
   case $ID in
@@ -37,6 +38,10 @@ fi
 [ -f "/usr/local/bin/cp" ] && alias cp='/usr/local/bin/cp -gR'
 [ -f "/usr/local/bin/mv" ] && alias mv='/usr/local/bin/mv -g'
 
+if hash zoxide 2>/dev/null;then
+    alias cd='z'
+    alias cdi='zi'
+fi
 alias mkdir='mkdir -p'
 alias myip="echo `hostname -I | awk '{print $1}'`"
 alias mygip="curl -s http://ipecho.net/plain; echo"
@@ -86,12 +91,12 @@ if hash mysql 2>/dev/null;then
 fi
 
 if hash exa 2>/dev/null;then    
-  alias l='exa -lahF --color=always --icons --sort=size --group-directories-first'
-  alias lss='exa -hF --color=always --icons --sort=size --group-directories-first'
-  alias la='exa -ahF --color=always --icons --sort=size --group-directories-first'
-  alias ls='exa -lhF --color=always --icons --sort=size --group-directories-first'
-  alias lst='exa -lahFT --color=always --icons --sort=size --group-directories-first'
-  alias lt='exa -aT --icons --group-directories-first --color=always --sort=size'
+  alias l='exa -lahF --color=auto --icons --sort=size --group-directories-first'
+  alias lss='exa -hF --color=auto --icons --sort=size --group-directories-first'
+  alias la='exa -ahF --color=auto --icons --sort=size --group-directories-first'
+  alias ls='exa -lhF --color=auto --icons --sort=size --group-directories-first'
+  alias lst='exa -lahFT --color=auto --icons --sort=size --group-directories-first'
+  alias lt='exa -aT --icons --group-directories-first --color=auto --sort=size'
 fi 
 
 if hash lvim 2>/dev/null;then
@@ -121,6 +126,7 @@ check_alias glow mcat "glow $@"
 check_alias bastet tetris "bastet"
 check_alias nsnake snake "nsnake"
 check_alias trash rm "trash-put"
+check_alias sl sl "sl -e"
 
 if [ -f "$HOME/Personal/misc/ascii" ];then
 	check_alias neofetch neofetch "neofetch --ascii ~/Personal/misc/ascii"

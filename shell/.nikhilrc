@@ -1,7 +1,27 @@
 # Hello i am a custom rc file 
+# ███╗   ██╗██╗██╗  ██╗██╗  ██╗██╗██╗     
+# ████╗  ██║██║██║ ██╔╝██║  ██║██║██║     
+# ██╔██╗ ██║██║█████╔╝ ███████║██║██║     
+# ██║╚██╗██║██║██╔═██╗ ██╔══██║██║██║     
+# ██║ ╚████║██║██║  ██╗██║  ██║██║███████╗
+# ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝
+# ┌────────────────────────────────────────────────────────────────────┐
+# │   This is the common rc file that is sourced by zshrc and bashrc   │
+# └────────────────────────────────────────────────────────────────────┘
+
 # created by Nikhil Singh (https://t.me/niksingh710) (https://github.com/niksingh710)
 CONFIGDIR="$HOME/.config"
 MCONFIGDIR="$HOME/.config/myconf"
+
+# shell sourcing (These all get sourced on the basis of which shell in process)
+CURSHELL=$(basename `readlink /proc/$$/exe`)
+if [ $CURSHELL = "bash" ];then
+  [ -f "$MCONFIGDIR/bash/bash" ] && source "$MCONFIGDIR/bash/bash"
+fi
+
+if [ $CURSHELL = "zsh" ];then
+  [ -f "$MCONFIGDIR/zsh/zsh" ] && source "$MCONFIGDIR/zsh/zsh"
+fi
 
 [ -f "$MCONFIGDIR/variables" ] && source "$MCONFIGDIR/variables"
 [ -f "$MCONFIGDIR/pathmod" ] && source "$MCONFIGDIR/pathmod"
@@ -14,15 +34,5 @@ fi
 
 if hash colorscript 2>/dev/null;then
   colorscript -r
-fi
-
-# shell sourcing (These all get sourced on the basis of which shell in process)
-CURSHELL=$(basename `readlink /proc/$$/exe`)
-if [ $CURSHELL = "bash" ];then
-  [ -f "$MCONFIGDIR/bash/bash" ] && source "$MCONFIGDIR/bash/bash"
-fi
-
-if [ $CURSHELL = "zsh" ];then
-  [ -f "$MCONFIGDIR/zsh/zsh" ] && source "$MCONFIGDIR/zsh/zsh"
 fi
 
