@@ -13,6 +13,8 @@
 CONFIGDIR="$HOME/.config"
 MCONFIGDIR="$HOME/.config/myconf"
 
+[ -f "$MCONFIGDIR/pathmod" ] && source "$MCONFIGDIR/pathmod"
+
 # shell sourcing (These all get sourced on the basis of which shell in process)
 CURSHELL=$(basename `readlink /proc/$$/exe`)
 if [ $CURSHELL = "bash" ];then
@@ -24,7 +26,6 @@ if [ $CURSHELL = "zsh" ];then
 fi
 
 [ -f "$MCONFIGDIR/variables" ] && source "$MCONFIGDIR/variables"
-[ -f "$MCONFIGDIR/pathmod" ] && source "$MCONFIGDIR/pathmod"
 [ -f "$MCONFIGDIR/aliases/alias" ] && source "$MCONFIGDIR/aliases/alias"
 [ -f "$MCONFIGDIR/func" ] && source "$MCONFIGDIR/func"
 

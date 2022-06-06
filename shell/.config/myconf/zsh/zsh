@@ -33,6 +33,6 @@ if [ -d "$MYLOC/completions/" ];then
   done
 fi
 # zoxide
-eval "$(zoxide init zsh)"
+hash zoxide 2>/dev/null && eval "$(zoxide init --cmd cd zsh)"
 # Starship prompt
 hash starship 2>/dev/null && eval "$(starship init zsh)"

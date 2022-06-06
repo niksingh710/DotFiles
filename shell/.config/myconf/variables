@@ -1,14 +1,14 @@
 # setting editor
 if hash vim 2>/dev/null;then
-  export EDITOR='vim'
+  export VISUAL='vim'
   if hash nvim 2>/dev/null;then
-    export EDITOR='nvim'
+    export VISUAL='nvim'
     if hash lvim 2>/dev/null;then
-      export EDITOR='lvim'
+      export VISUAL='lvim'
     fi
   fi
 fi
-
+export EDITOR=$VISUAL
 if hash fd 2>/dev/null;then
   export FZF_CTRL_T_COMMAND="fd --type f --hidden"
 fi
@@ -19,8 +19,9 @@ else
 fi
 export BAT_THEME="TwoDark"
 export PNPM_HOME="/home/niksingh710/.local/share/pnpm"
-if hash exa 2>/dev/null;then
-    export _ZO_FZF_OPTS="--preview 'exa -ahFT -L=1 --color=auto --icons --sort=size --group-directories-first {-1}' --height=30% --layout=reverse "
-else
-    export _ZO_FZF_OPTS="--preview 'ls {-1}' --height=30% --layout=reverse "
-fi
+# if hash exa 2>/dev/null;then
+#     export _ZO_FZF_OPTS="--preview 'exa -ahFT -L=1 --color=auto --icons --sort=size --group-directories-first {-1}' --height=30% --layout=reverse "
+# else
+#     export _ZO_FZF_OPTS="--preview 'ls {-1}' --height=30% --layout=reverse "
+# fi
+export ZVM_VI_EDITOR=$VISUAL
