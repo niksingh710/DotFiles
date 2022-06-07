@@ -1,7 +1,6 @@
 require("niksingh710.whichkey")
 require("niksingh710.keymaps")
 require("niksingh710.options")
--- require("niksingh710.lualine")
 require("niksingh710.dashboard")
 require("niksingh710.autocommands")
 require("niksingh710.general")
