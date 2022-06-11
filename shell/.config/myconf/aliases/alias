@@ -70,15 +70,15 @@ alias ssh-terminate="pkill -o -u $USER sshd"
 # use `update-rc.d ssh disable` to disable ssh at startup and use `update-rc.d ssh enable` to enable at start up
 
 # X11 alias 
-if [[ $XDG_SESSION_TYPE = 'x11' ]];then # if getting any errors change condition like :-> if [[ $XDG_SESSION_TYPE == 'x11' ]];then
-  alias xdg-open="xdg-open 2>/dev/null"
-  alias open="xdg-open 2>/dev/null"
+# if [[ $XDG_SESSION_TYPE = 'x11' ]];then # if getting any errors change condition like :-> if [[ $XDG_SESSION_TYPE == 'x11' ]];then
+  # alias xdg-open="xdg-open 2>/dev/null"
+  # alias open="xdg-open 2>/dev/null"
   if hash xclip 2>/dev/null;then
     alias copy='xclip -selection clipboard'
     alias pcopy='xclip -selection clipboard && xclip -selection clipboard -o'
     alias tb='nc termbin.com 9999 | pcopy'
   fi
-fi
+# fi
 
 if hash mysql 2>/dev/null;then
    alias mysql-start='sudo systemctl start mysql'
@@ -127,6 +127,9 @@ check_alias bastet tetris "bastet"
 check_alias nsnake snake "nsnake"
 check_alias trash rm "trash-put"
 check_alias sl sl "sl -e"
+check_alias tldr eman "tldr"
+check_alias zsh zsh "exec zsh"
+check_alias bash bash "exec bash"
 
 if [ -f "$HOME/Personal/misc/ascii" ];then
 	check_alias neofetch neofetch "neofetch --ascii ~/Personal/misc/ascii"

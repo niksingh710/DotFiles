@@ -29,3 +29,32 @@ ex ()
   fi
 }
 
+# fzf func
+if hash fzf 2>/dev/null;then
+  fcd(){
+    CURDIR=$(pwd)
+       if hash fd 2>/dev/null;then
+        VAR=$(fd . $1 --type d --hidden | fzf --height=30% --layout=reverse)
+      else
+        VAR=$(find . $1 -type d | fzf --height=30% --layout=reverse)
+      fi
+        if [ -z $VAR ];then
+          VAR=$CURDIR
+        fi
+        cd $VAR
+  }
+fi
+
+if hash xdg-open 2>/dev/null;then
+open(){
+    if [ $# -eq 1 ];then
+        xdg-open $1 &>/dev/null
+    else
+      if hash fd 2>/dev/null;then
+        xdg-open $(fd --type f --hidden | fzf --height=30% --layout=reverse) &>/dev/null
+      else
+        xdg-open $(find . -type f | fzf --height=30% --layout=reverse) &>/dev/null
+      fi
+    fi
+  }
+fi

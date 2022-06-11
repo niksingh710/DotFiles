@@ -12,16 +12,21 @@ export EDITOR=$VISUAL
 if hash fd 2>/dev/null;then
   export FZF_CTRL_T_COMMAND="fd --type f --hidden"
 fi
-if hash batcat 2>/dev/null;then
-    export FZF_CTRL_T_OPTS="--preview 'batcat -p --color=always {}'"
+if hash pistol 2>/dev/null;then
+      export FZF_CTRL_T_OPTS="--preview='pistol -c $HOME/.config/pistol/pistol.conf {}'"
+      export _ZO_FZF_OPTS="--preview 'pistol -c $HOME/.config/pistol/pistol.conf {-1}'--height=30% --layout=reverse "
 else
-    export FZF_CTRL_T_OPTS="--preview 'cat -p {}'"
+  if hash exa 2>/dev/null;then
+      export _ZO_FZF_OPTS="--preview 'exa -ahFT -L=1 --color=auto --icons --sort=size --group-directories-first {-1}' --height=30% --layout=reverse "
+  fi
+  if hash batcat 2>/dev/null;then
+      export FZF_CTRL_T_OPTS="--preview 'batcat -p --color=always {}'--height=30% --layout=reverse "
+  else
+      export FZF_CTRL_T_OPTS="--preview 'cat -p {}'--height=30% --layout=reverse "
+  fi
 fi
 export BAT_THEME="TwoDark"
 export PNPM_HOME="/home/niksingh710/.local/share/pnpm"
-# if hash exa 2>/dev/null;then
-#     export _ZO_FZF_OPTS="--preview 'exa -ahFT -L=1 --color=auto --icons --sort=size --group-directories-first {-1}' --height=30% --layout=reverse "
-# else
 #     export _ZO_FZF_OPTS="--preview 'ls {-1}' --height=30% --layout=reverse "
 # fi
 export ZVM_VI_EDITOR=$VISUAL
