@@ -26,8 +26,10 @@
 #                           /_/                
 # (niksingh710) [https://github.com/niksingh710] [https://t.me/niksingh710]
 SYM="-"
-TURBO=$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)
-[ $TURBO = 0 ] && SYM="🟢" || SYM="🔴"
-FIN="$SYM "
+if [ -f /sys/devices/system/cpu/intel_pstate/no_turbo ];then
+  TURBO=$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)
+  [ $TURBO = 0 ] && SYM="🟢" || SYM="🔴"
+  FIN="$SYM "
+fi
 [ -f "$HOME/Personal/bin/toggle-turbo" ] && DATA="$FIN | bash=$HOME/Personal/bin/toggle-turbo onclick=bash" || DATA="$SYM"
 echo "$DATA"

@@ -29,7 +29,9 @@ ix() {
         }
         echo "^C to cancel, ^D to send."
     }
-    curl $opts -F f:1='<-' $* ix.io/$id
+    RESULT=$(curl $opts -# -F f:1='<-' $* ix.io/$id)
+    echo $RESULT | xclip -selection clipboard
+    echo $RESULT
 }
 
 ix $*

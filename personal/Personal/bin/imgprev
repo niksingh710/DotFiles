@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+  rm /tmp/fzf-pdf-preview* 2>/dev/null
+
+  path="$(realpath "$1")"
+  type="$(file --brief --mime-type "$path")"
+
+
+  dst=$(mktemp --dry-run -t --tmpdir=/dev/shm fzf-preview-XXXXXX)
+
+  if [[ $type =~ image.* ]]
+  then
+      DRAW_PREVIEW "$path"
+  elif [[ $type =~ application/pdf ]]
+  then
+      pdftoppm -singlefile "$path" "$dst"
+      DRAW_PREVIEW "$dst.ppm"
+      echo $(clear;pdfinfo "$path" | grep Pages)
+  else
+      CLEAR_PREVIEW
+      pistol -c ~/.config/pistol/pistol.conf "$path"
+  fi

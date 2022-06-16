@@ -26,5 +26,6 @@
 #                           /_/                
 # (niksingh710) [https://github.com/niksingh710] [https://t.me/niksingh710]
 DATAPER=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
-FIN="$DATAPER"
+# DATAPERCPU=$(sensors | grep Core | awk '{print substr($3, 2, length($3)-5)}' | tr "\\n" " " | sed 's/ /°C  /g' | sed 's/  $//')
+FIN="$DATAPER "
 echo "$FIN | bash='systemmonitor' onclick=bash"

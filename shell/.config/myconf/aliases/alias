@@ -109,10 +109,11 @@ if hash batcat 2>/dev/null;then
   alias ccat='batcat -p'
   alias cpu-governer='ccat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
   alias cpu-turbo='[ $(ccat /sys/devices/system/cpu/intel_pstate/no_turbo) = 0 ] && echo "Turbo: On" || echo "Turbo: Off"'
-  alias ease='cat -l bash'
-  alias ease='ccat -l bash'
+  alias bcat='cat -l bash'
 fi
 
+check_alias lvim er 'lvim -c "Telescope oldfiles"'
+check_alias lvim ser 'sudo lvim -c "Telescope oldfiles"'
 check_alias sensors wsensors 'watch -n1 -t "sensors"'
 check_alias figlet stime 'watch -n1 -t "date +%T | figlet"'
 check_alias unimatrix matrix 'unimatrix -f -l ocCgGkS -s 96'
@@ -130,6 +131,11 @@ check_alias sl sl "sl -e"
 check_alias tldr eman "tldr"
 check_alias zsh zsh "exec zsh"
 check_alias bash bash "exec bash"
+check_alias fzf list "/usr/bin/ls | fzf -m --bind=ctrl-space:select --preview='pistol -c $HOME/.config/pistol/pistol.conf {}' --height=30% --layout=reverse"
+
+if ( hash fzf-ueberzogen.sh 2>/dev/null ) && ( hash imgprev 2>/dev/null );then
+  check_alias fzf list "/usr/bin/ls | fzf-ueberzogen.sh -m --bind=ctrl-space:select --preview='imgprev {}' --height=60% --layout=reverse"
+fi
 
 if [ -f "$HOME/Personal/misc/ascii" ];then
 	check_alias neofetch neofetch "neofetch --ascii ~/Personal/misc/ascii"
@@ -154,3 +160,4 @@ fi
 
 unset -f check_alias
 unset ID
+unset MYLOC

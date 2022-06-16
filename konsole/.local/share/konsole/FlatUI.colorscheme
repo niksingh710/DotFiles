@@ -1,11 +1,17 @@
 [Background]
 Color=0,0,0
+RandomHueRange=360
+RandomSaturationRange=100
 
 [BackgroundFaint]
 Color=0,0,0
+RandomHueRange=360
+RandomSaturationRange=100
 
 [BackgroundIntense]
 Color=0,0,0
+RandomHueRange=360
+RandomSaturationRange=100
 
 [Color0]
 Color=44,62,80
@@ -80,20 +86,26 @@ Color=189,195,199
 Color=236,240,241
 
 [Foreground]
-Color=250,254,255
+Color=255,255,255
+RandomHueRange=360
+RandomSaturationRange=100
 
 [ForegroundFaint]
-Color=250,254,255
+Color=255,255,255
+RandomHueRange=360
+RandomSaturationRange=100
 
 [ForegroundIntense]
-Color=236,240,241
+Color=255,255,255
+RandomHueRange=360
+RandomSaturationRange=100
 
 [General]
 Anchor=1,1
 Blur=true
-ColorRandomization=false
+ColorRandomization=true
 Description=Flatui
 FillStyle=NoScaling
-Opacity=0.4
+Opacity=0.72
 Wallpaper=/home/niksingh710/Pictures/Personal/NSWhitesmall.png
 WallpaperOpacity=0.3

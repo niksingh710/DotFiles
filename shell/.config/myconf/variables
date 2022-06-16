@@ -10,19 +10,22 @@ if hash vim 2>/dev/null;then
 fi
 export EDITOR=$VISUAL
 if hash fd 2>/dev/null;then
-  export FZF_CTRL_T_COMMAND="fd --type f --hidden"
+  export FZF_CTRL_T_COMMAND="fd --hidden"
 fi
 if hash pistol 2>/dev/null;then
-      export FZF_CTRL_T_OPTS="--preview='pistol -c $HOME/.config/pistol/pistol.conf {}'"
-      export _ZO_FZF_OPTS="--preview 'pistol -c $HOME/.config/pistol/pistol.conf {-1}'--height=30% --layout=reverse "
+      export PISTOL_CHROMA_FORMATTER=terminal16m
+      export FZF_CTRL_T_OPTS="--bind=ctrl-space:select --preview='pistol -c $HOME/.config/pistol/pistol.conf {}' --height=60%"
+      export FZF_ALT_C_OPTS="--bind=ctrl-space:select --preview='pistol -c $HOME/.config/pistol/pistol.conf {}' --height=60%"
+      export _ZO_FZF_OPTS="--preview 'pistol -c $HOME/.config/pistol/pistol.conf {-1}' --height=30% --layout=reverse "
 else
   if hash exa 2>/dev/null;then
       export _ZO_FZF_OPTS="--preview 'exa -ahFT -L=1 --color=auto --icons --sort=size --group-directories-first {-1}' --height=30% --layout=reverse "
+      export FZF_ALT_C_OPTS="--preview 'exa -ahFT -L=1 --color=auto --icons --sort=size --group-directories-first {-1}' --height=30% --layout=reverse "
   fi
   if hash batcat 2>/dev/null;then
-      export FZF_CTRL_T_OPTS="--preview 'batcat -p --color=always {}'--height=30% --layout=reverse "
+      export FZF_CTRL_T_OPTS="--bind=ctrl-space:select --preview 'batcat -p --color=always {}' --height=30% --layout=reverse "
   else
-      export FZF_CTRL_T_OPTS="--preview 'cat -p {}'--height=30% --layout=reverse "
+      export FZF_CTRL_T_OPTS="--bind=ctrl-space:select --preview 'cat -p {}' --height=30% --layout=reverse "
   fi
 fi
 export BAT_THEME="TwoDark"

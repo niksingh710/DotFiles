@@ -28,33 +28,49 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
-
 # fzf func
 if hash fzf 2>/dev/null;then
   fcd(){
     CURDIR=$(pwd)
        if hash fd 2>/dev/null;then
-        VAR=$(fd . $1 --type d --hidden | fzf --height=30% --layout=reverse)
+        VAR=$(fd . $1 --type d --hidden | fzf --height=60% --layout=reverse --preview='pistol -c $HOME/.config/pistol/pistol.conf {}')
       else
-        VAR=$(find . $1 -type d | fzf --height=30% --layout=reverse)
+        VAR=$(find . $1 -type d | fzf --height=60% --layout=reverse --preview='pistol -c $HOME/.config/pistol/pistol.conf {}')
       fi
         if [ -z $VAR ];then
           VAR=$CURDIR
         fi
         cd $VAR
   }
-fi
 
 if hash xdg-open 2>/dev/null;then
-open(){
-    if [ $# -eq 1 ];then
-        xdg-open $1 &>/dev/null
-    else
-      if hash fd 2>/dev/null;then
-        xdg-open $(fd --type f --hidden | fzf --height=30% --layout=reverse) &>/dev/null
+if ( hash fzf-ueberzogen.sh 2>/dev/null ) && ( hash imgprev 2>/dev/null );then
+  open(){
+      if [ $# -eq 1 ];then
+          xdg-open $1 &>/dev/null
       else
-        xdg-open $(find . -type f | fzf --height=30% --layout=reverse) &>/dev/null
+        if hash fd 2>/dev/null;then
+          xdg-open "$(fd --type f --hidden | fzf-ueberzogen.sh --height=60% --layout=reverse --preview='imgprev {}')" &>/dev/null
+        else
+          xdg-open "$(find . -type f | fzf-ueberzogen.sh --height=60% --layout=reverse --preview='imgprev {}')" &>/dev/null
+        fi
       fi
+    }
+    else
+  open(){
+        if [ $# -eq 1 ];then
+            xdg-open $1 &>/dev/null
+        else
+          if hash fd 2>/dev/null;then
+            xdg-open "$(fd --type f --hidden | fzf --height=60% --layout=reverse --preview='pistol -c $HOME/.config/pistol/pistol.conf {}')" &>/dev/null
+          else
+            xdg-open "$(find . -type f | fzf --height=60% --layout=reverse --preview='pistol -c $HOME/.config/pistol/pistol.conf {}')" &>/dev/null
+          fi
+        fi
+      }
+    unset -f DRAW_PREVIEW
     fi
-  }
 fi
+fi
+
+

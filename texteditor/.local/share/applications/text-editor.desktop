@@ -1,0 +1,7 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Exec=konsole -e /home/niksingh710/.local/bin/lvim
+Name=text-editor
+NoDisplay=true
+Type=Application
+Terminal=false
