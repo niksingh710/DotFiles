@@ -129,8 +129,6 @@ check_alias nsnake snake "nsnake"
 check_alias trash rm "trash-put"
 check_alias sl sl "sl -e"
 check_alias tldr eman "tldr"
-check_alias zsh zsh "exec zsh"
-check_alias bash bash "exec bash"
 check_alias fzf list "/usr/bin/ls | fzf -m --bind=ctrl-space:select --preview='pistol -c $HOME/.config/pistol/pistol.conf {}' --height=30% --layout=reverse"
 
 if ( hash fzf-ueberzogen.sh 2>/dev/null ) && ( hash imgprev 2>/dev/null );then
